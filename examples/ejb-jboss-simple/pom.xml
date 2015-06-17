@@ -6,9 +6,9 @@
 	<artifactId>ejb-jboss-simple</artifactId>
 	<packaging>war</packaging>
 	<version>1.0.0-SNAPSHOT</version>
-	<name>ejb-jboss-simple</name>
-  <description>Java EE 6 example with JPA 2.0 prepared for JBoss AS 7.x</description>
-  <url>http://127.0.0.1:8080/ejb-jboss-simple/</url>
+	<name>ejb-jboss-example</name>
+  	<description>Example for Java EE 6 compliant webapp with JPA 2.0 prepared for JBoss AS 7.x</description>
+  	<url>http://127.0.0.1:8080/ejb-jboss-simple/</url>
     
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -66,7 +66,7 @@
 				</configuration>
 			</plugin>
 
-			<!--  Ensures we are compiling at 1.6 level -->
+			<!--  Ensures we are compiling at least with 1.6 level -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -80,9 +80,9 @@
 			<!-- JBoss AS plugin for command line deployment 
            https://docs.jboss.org/jbossas/7/plugins/maven/latest/index.html -->
 			<plugin>
-        <groupId>org.jboss.as.plugins</groupId>
-        <artifactId>jboss-as-maven-plugin</artifactId>
-        <version>7.6.Final</version>
+				<groupId>org.jboss.as.plugins</groupId>
+				<artifactId>jboss-as-maven-plugin</artifactId>
+				<version>7.7.Final</version>
 				<configuration>
 					<jbossHome>${jboss.home}</jbossHome>
 					<serverName>${jboss.domain}</serverName>

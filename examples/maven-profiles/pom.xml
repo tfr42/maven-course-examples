@@ -1,10 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>maven.course</groupId>
 	<artifactId>maven-profiles</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
-	<name>Maven Profiles</name>
+	<packaging>jar</packaging>
+	<name>profiles-examples</name>
+	<description>Example using profiles for different environments</description>
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -20,12 +24,31 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
+			<version>3.8.2</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>no-profile</finalName>
+		<finalName>${project.artifactId}-no-profile</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.3</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.18.1</version>
+			    <configuration>
+					<failIfNoTests>true</failIfNoTests>
+				</configuration>
+			</plugin>
+		</plugins>
 	</build>
 	<profiles>
 		<profile>
@@ -36,35 +59,35 @@
 				</property>
 			</activation>
 			<build>
-				<finalName>DMZ1</finalName>
+				<finalName>${project.artifactId}-DMZ1</finalName>
 			</build>
 		</profile>
 		<profile>
-			<id>test</id>
+			<id>development</id>
 			<activation>
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<properties>
-				<!-- <bin>test</bin> -->
-				<!-- <test>active</test> -->
+				<env>development</env>
 			</properties>
 			<build>
-				<finalName>${project.artifactId}-${bin}-${test}</finalName>
+				<finalName>${project.artifactId}-${env}</finalName>
 			</build>
 		</profile>
 		<profile>
-			<id>windowsTest</id>
+			<id>windows</id>
 			<activation>
 				<os>
 					<family>Windows</family>
 				</os>
 			</activation>
 			<build>
+				<finalName>${project.artifactId}-win</finalName>
 				<plugins>
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-failsafe-plugin</artifactId>
-						<version>2.17</version>
+						<version>2.18.1</version>
 						<executions>
 							<execution>
 								<id>integration-test</id>

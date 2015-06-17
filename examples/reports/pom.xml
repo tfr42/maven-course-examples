@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
@@ -7,8 +7,8 @@
 	<artifactId>reports</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 
-	<name>reports</name>
-	<description>Vehicle demo project powered by Spring</description>
+	<name>reports-example</name>
+	<description>Example for Maven reports using vehicle demo project powered by Spring</description>
 	
 	<issueManagement>
 		<system>github</system>
@@ -31,7 +31,7 @@
 		<java.version>1.7</java.version>
 		<spring.version>3.1.4.RELEASE</spring.version>
 		<maven.checkstyle.plugin>2.15</maven.checkstyle.plugin>
-		<maven.jacoco.plugin>0.7.2.201409121644</maven.jacoco.plugin>
+		<maven.jacoco.plugin>0.7.5.201505241946</maven.jacoco.plugin>
 		<maven.doxia.module.markdown.version>1.5</maven.doxia.module.markdown.version>
 		<maven.javadoc.plugin>2.10.3</maven.javadoc.plugin>
 		<maven.jxr.plugin>2.5</maven.jxr.plugin>
@@ -43,8 +43,8 @@
 		<maven.surefire.plugin>2.18.1</maven.surefire.plugin>
 		<maven.taglist.plugin>2.4</maven.taglist.plugin>
 		<maven.versions.plugin>2.2</maven.versions.plugin>
-    <maven.jdepend.plugin>2.0</maven.jdepend.plugin>
-    <maven.dependencycheck.plugin>1.2.11</maven.dependencycheck.plugin>
+        <maven.jdepend.plugin>2.0</maven.jdepend.plugin>
+        <maven.dependencycheck.plugin>1.2.11</maven.dependencycheck.plugin>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<skipTests>false</skipTests>
@@ -52,9 +52,9 @@
 		<sonar.host.url>http://localhost/sonar</sonar.host.url>
 	</properties>
   
-  <prerequisites>
-    <maven>3.0.5</maven>
-  </prerequisites>
+    <prerequisites>
+      <maven>3.0.5</maven>
+    </prerequisites>
 
 	<dependencies>
 		<dependency>

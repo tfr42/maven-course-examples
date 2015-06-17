@@ -6,7 +6,7 @@
     <version>1.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>proficio-store-xstream</artifactId>
-  <name>Maven Proficio XStream Store</name>
+  <name>Proficio XStream Store</name>
   <dependencies>
     <dependency>
       <groupId>xstream</groupId>

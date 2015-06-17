@@ -6,7 +6,7 @@
     <version>1.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>proficio-core</artifactId>
-  <name>Maven Proficio Core</name>
+  <name>Proficio Core</name>
   <dependencies>
     <dependency>
       <groupId>${project.groupId}</groupId>

@@ -7,7 +7,7 @@
   </parent>
   <artifactId>proficio-stores</artifactId>
   <packaging>pom</packaging>
-  <name>Maven Proficio Stores</name>
+  <name>Proficio Stores</name>
   <dependencies>
     <dependency>
       <groupId>${project.groupId}</groupId>

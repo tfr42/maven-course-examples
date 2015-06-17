@@ -1,10 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>maven.course</groupId>
 	<artifactId>maven-uppercase-plugin-usage</artifactId>
-	<version>1.0-SNAPSHOT</version>
-	<name>maven-uppercase-plugin Maven Plugin usage</name>
+	<version>1.0.0-SNAPSHOT</version>
+	<name>maven-uppercase-plugin-usage-example</name>
 	<description>Usage of maven-uppercase-plugin Maven Plugin</description>
 
 	<build>
@@ -21,7 +22,7 @@
 			<plugin>
 				<groupId>maven.course</groupId>
 				<artifactId>maven-uppercase-plugin</artifactId>
-				<version>1.0-SNAPSHOT</version>
+				<version>1.0.0-SNAPSHOT</version>
 				<executions>
 					<execution>  
 						<goals>
@@ -59,39 +60,6 @@
 			
 		</resources>
 
-		<pluginManagement>
-			<plugins>
-				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
-				<plugin>
-					<groupId>org.eclipse.m2e</groupId>
-					<artifactId>lifecycle-mapping</artifactId>
-					<version>1.0.0</version>
-					<configuration>
-						<lifecycleMappingMetadata>
-							<pluginExecutions>
-								<pluginExecution>
-									<pluginExecutionFilter>
-										<groupId>maven.course</groupId>
-										<artifactId>
-											maven-uppercase-plugin
-										</artifactId>
-										<versionRange>
-											[1.0-SNAPSHOT,)
-										</versionRange>
-										<goals>
-											<goal>uppercase</goal>
-										</goals>
-									</pluginExecutionFilter>
-									<action>
-										<ignore></ignore>
-									</action>
-								</pluginExecution>
-							</pluginExecutions>
-						</lifecycleMappingMetadata>
-					</configuration>
-				</plugin>
-			</plugins>
-		</pluginManagement>
 	</build>
 
 	<dependencies>

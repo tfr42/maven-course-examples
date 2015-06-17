@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
@@ -5,7 +6,8 @@
 	<groupId>maven.course</groupId>
 	<artifactId>jaxb-code-generation</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
-	<name>jaxb-code-generation</name>
+	<name>jaxb-code-generation-example</name>
+	<description>Example using jaxb plugin to generate source code from XSD</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -40,29 +42,12 @@
 					</execution>
 				</executions>
 			</plugin>
-
-			<!-- <plugin> -->
-			<!-- <groupId>org.codehaus.mojo</groupId> -->
-			<!-- <artifactId>jaxb2-maven-plugin</artifactId> -->
-			<!-- <version>1.3.1</version> -->
-			<!-- <executions> -->
-			<!-- <execution> -->
-			<!-- <goals> -->
-			<!-- <goal>xjc</goal> -->
-			<!-- </goals> -->
-			<!-- </execution> -->
-			<!-- </executions> -->
-			<!-- <configuration> -->
-			<!-- <schemaDirectory>src/main/resources</schemaDirectory> -->
-			<!-- <packageName>course.freedb.domain</packageName> -->
-			<!-- </configuration> -->
-			<!-- </plugin> -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
+				<version>3.2</version>
 				<configuration>
-					<encoding>UTF-8</encoding>
+					<encoding>${project.build.sourceEncoding}</encoding>
 					<source>${java.version}</source>
 					<target>${java.version}</target>
 				</configuration>

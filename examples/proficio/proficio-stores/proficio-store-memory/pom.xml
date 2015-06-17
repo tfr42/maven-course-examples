@@ -6,5 +6,5 @@
     <version>1.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>proficio-store-memory</artifactId>
-  <name>Maven Proficio Memory Store</name>                              
+  <name>Proficio Memory Store</name>
 </project>
