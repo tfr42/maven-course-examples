@@ -15,6 +15,7 @@
     <module>ejb-jboss-simple</module>
     <module>ejbs</module>
     <module>git-scm-example</module>
+    <module>jarsigner-example</module>
     <module>jaxb-code-generation</module>
     <module>jaxws-code-generation</module>
     <module>jaxws-fraction-ejb</module>
