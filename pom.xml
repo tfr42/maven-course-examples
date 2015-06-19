@@ -13,6 +13,7 @@
     <connection>scm:git:scm:git:https://github.com/tfr42/maven-course-examples.git</connection>
     <developerConnection>scm:git:https://tfr42@github.com/tfr42/maven-course-examples.git</developerConnection>
     <url>https://github.com/tfr42/maven-course-examples/</url>
+    <tag>HEAD</tag>
   </scm>
 	<modules>
 		<module>examples</module>
