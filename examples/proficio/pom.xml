@@ -9,7 +9,7 @@
 	<description>Proficio sample application from "Better Builds with Maven"</description>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <java.version>1.6</java.version>
+                <java.version>1.6</java.version>
 	</properties>             
 	
 	<modules>
@@ -38,7 +38,7 @@
 		</dependencies>
 	</dependencyManagement>
 	
-  <dependencies>
+        <dependencies>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -205,4 +205,39 @@
       </plugin>
     </plugins>
   </reporting>
+  <profiles>
+    <profile>
+      <id>doclint-java8-disable</id>
+      <activation>
+        <jdk>[1.8,)</jdk>
+      </activation>
+      <build>
+        <plugins>
+         <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-javadoc-plugin</artifactId>
+          <configuration>
+           <additionalparam>-Xdoclint:none</additionalparam>
+          </configuration>
+         </plugin>
+         <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-site-plugin</artifactId>
+          <version>3.3</version>
+          <configuration>
+            <reportPlugins>
+             <plugin>
+               <groupId>org.apache.maven.plugins</groupId>
+               <artifactId>maven-javadoc-plugin</artifactId>
+               <configuration>
+                 <additionalparam>-Xdoclint:none</additionalparam>
+               </configuration>
+             </plugin>
+            </reportPlugins>
+          </configuration>
+        </plugin>
+      </plugins>
+    </build>
+   </profile>
+  </profiles>
 </project>
