@@ -2,7 +2,7 @@
 
 The [VersionEye Maven Plugin](https://github.com/versioneye/versioneye_maven_plugin) is a Maven Plugin for the [VersionEye API](https://www.versioneye.com/api/). 
 
-The [maven](https://github.com/versioneye/versioneye_maven_plugin) plugin for [VersionEye](https://www.versioneye.com/) helps you to create/update a project at VersionEye. VersionEye is a Notification System for Software Libraries. It will help you to keep your projects up-to-date and automatically notify you about outdated dependencies and license violations. You can check it out here: [www.versioneye.com](https://www.versioneye.com/).
+The [maven](https://github.com/versioneye/versioneye_maven_plugin) plugin for [VersionEye](https://www.versioneye.com/) helps you to create/update a project at VersionEye, which is a Notification System for Software Libraries. It will help you to keep your projects up-to-date and automatically notify you about outdated dependencies and license violations. You can check it out here: [www.versioneye.com](https://www.versioneye.com/).
 
 This plugin is specially required if you have a reactor build, a big Maven project with parent pom and children. The VersionEye plugin is resolving all dependencies and variables locally and only sends the results to the VersionEye API. 
 
