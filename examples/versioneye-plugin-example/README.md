@@ -70,7 +70,7 @@ By the way. If you don't like to have a `versioneye.properties` file you can set
       <artifactId>versioneye-maven-plugin</artifactId>
       <version>3.5.1</version>
       <configuration>
-	    <projectId>_YOUR_VERSONEYE_PROJECT_ID_</projectId>
+	    <projectId>_YOUR_VERSIONEYE_PROJECT_ID_</projectId>
 	  </configuration>
     </plugin>
   </plugins>
