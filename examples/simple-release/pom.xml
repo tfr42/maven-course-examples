@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>maven.course</groupId>
   <artifactId>simple-release</artifactId>
-  <version>2.0.1-SNAPSHOT</version>
+  <version>2.0.3</version>
   <name>simple-release-example</name>
   <description>Example using release-plugin</description>
 
@@ -15,7 +15,7 @@
     <connection>scm:git:https://github.com/tfr42/maven-course-examples.git</connection>
     <developerConnection>scm:git:https://github.com/tfr42/maven-course-examples.git</developerConnection>
     <url>https://github.com/tfr42/maven-course-examples/</url>	
-    <tag>HEAD</tag>
+    <tag>simple-release-2.0.3</tag>
   </scm>
 
   <dependencies>
