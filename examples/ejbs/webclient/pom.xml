@@ -22,7 +22,7 @@
 			<groupId>${project.groupId}</groupId>
 			<artifactId>ejb3.sessionbeans</artifactId>
 			<version>${project.version}</version>
-			<scope>provided</scope>
+			<classifier>client</classifier>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
