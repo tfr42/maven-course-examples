@@ -38,6 +38,10 @@
 		</snapshotRepository>
 	</distributionManagement>
 	<build>
+		<!--
+			Simply run:
+			mvn -s src/main/resources/config/settings.xml
+		-->
 		<defaultGoal>deploy</defaultGoal>
 	</build>
 </project>
