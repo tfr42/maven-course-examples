@@ -3,7 +3,7 @@ package course.client;
 import course.common.TimeService;
 import course.util.JNDI;
 
-public class TimeServiceClient {
+public class TimeServiceIT {
 	public static void main(String[] args) throws Exception {
 //		TimeService timeService = (TimeService) JNDI.lookup(JNDI.GLASSFISH_ENV,"course.common.TimeService");
 		TimeService timeService = (TimeService) JNDI.lookup(JNDI.GLASSFISH_ENV,"my/Timer");

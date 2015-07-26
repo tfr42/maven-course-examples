@@ -5,7 +5,7 @@ import javax.xml.ws.WebServiceRef;
 import course.jaxws.generated.BruchDienst;
 import course.jaxws.generated.FractionBeanService;
 
-public class FractionClient {
+public class FractionWebServiceIT {
 	
 	@WebServiceRef(wsdlLocation="http://localhost:9000/service?wsdl") 
 	private static FractionBeanService service;

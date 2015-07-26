@@ -3,7 +3,7 @@ package course.client;
 import course.common.Warenkorb;
 import course.util.JNDI;
 
-public class WarenkorbClient {
+public class WarenkorbIT {
 	
 	public static void main(String[] args) throws Exception {
 		String p1 = "USB-Stick", p2 = "Notebook";
