@@ -9,6 +9,7 @@
 	<artifactId>simple-webapp</artifactId>
 	<packaging>war</packaging>
 	<name>Simple Weather Web Application with Integration Tests</name>
+	<url>http://localhost:8080/</url>
 	<dependencies>
 		<dependency>
 			<groupId>javax.servlet</groupId>
