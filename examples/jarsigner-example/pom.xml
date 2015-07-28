@@ -7,7 +7,6 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>jarsigner-example</name>
-    <url>http://www.crowdcode.io</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -23,7 +22,7 @@
     </dependencies>
   
     <build>
-        <scriptSourceDirectory>/Users/idueppe/tmp</scriptSourceDirectory>
+        <defaultGoal>verify</defaultGoal>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
