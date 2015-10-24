@@ -6,7 +6,7 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>JAX-WS - Code Generation exercise</name>
-  <description>This is a exercise project for working with JAX-WS and code generation</description>
+  	<description>This is a exercise project for working with JAX-WS and code generation</description>
   
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -22,7 +22,6 @@
 	</dependencies>
 
 	<build>
-		<finalName>helloworld</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
