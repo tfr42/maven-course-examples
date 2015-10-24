@@ -6,12 +6,12 @@
   <version>1.0.0-SNAPSHOT</version>              
 	<packaging>ejb</packaging>
 	<name>JAX-WS - Fraction Web Service exercise</name>
-  <description>This is a exercise project for working with JAX-WS</description>
+  <description>This is an exercise project for working with JAX-WS</description>
 	<dependencies>
    		<dependency>
      		<groupId>org.glassfish.extras</groupId>
      		<artifactId>glassfish-embedded-all</artifactId>
-     		<version>3.1.1-b11</version>
+     		<version>3.1.1</version>
 		    <scope>test</scope>
    		</dependency>
 		  <dependency>
@@ -95,63 +95,7 @@
 					</execution>
 				</executions>
 			</plugin>			
-			
 		</plugins>
-		<pluginManagement>
-			<plugins>
-				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
-				<plugin>
-					<groupId>org.eclipse.m2e</groupId>
-					<artifactId>lifecycle-mapping</artifactId>
-					<version>1.0.0</version>
-					<configuration>
-						<lifecycleMappingMetadata>
-							<pluginExecutions>
-								<pluginExecution>
-									<pluginExecutionFilter>
-										<groupId>
-											org.apache.maven.plugins
-										</groupId>
-										<artifactId>
-											maven-dependency-plugin
-										</artifactId>
-										<versionRange>
-											[2.1,)
-										</versionRange>
-										<goals>
-											<goal>copy</goal>
-										</goals>
-									</pluginExecutionFilter>
-									<action>
-										<ignore></ignore>
-									</action>
-								</pluginExecution>
-								<pluginExecution>
-									<pluginExecutionFilter>
-										<groupId>
-											org.jvnet.jax-ws-commons
-										</groupId>
-										<artifactId>
-											jaxws-maven-plugin
-										</artifactId>
-										<versionRange>
-											[1.12,)
-										</versionRange>
-										<goals>
-											<goal>wsgen</goal>
-											<goal>wsimport</goal>
-										</goals>
-									</pluginExecutionFilter>
-									<action>
-										<ignore></ignore>
-									</action>
-								</pluginExecution>
-							</pluginExecutions>
-						</lifecycleMappingMetadata>
-					</configuration>
-				</plugin>
-			</plugins>
-		</pluginManagement>
 	</build>
 	
 	<properties>
