@@ -22,6 +22,8 @@
 				<version>0.12.3</version>
 				<configuration>
 					<extension>true</extension>
+					<specVersion>2.2</specVersion>
+					<accessExternalSchema>all</accessExternalSchema>
 					<args>
 						<arg>-Xfluent-api</arg>
 					</args>
