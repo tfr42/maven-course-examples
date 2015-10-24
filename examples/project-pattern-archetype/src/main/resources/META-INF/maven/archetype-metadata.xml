@@ -7,7 +7,7 @@
 
 	<requiredProperties>
 		<requiredProperty key="javaVersion">
-			<defaultValue>1.6</defaultValue>
+			<defaultValue>1.8</defaultValue>
 		</requiredProperty>
 	</requiredProperties>
 
