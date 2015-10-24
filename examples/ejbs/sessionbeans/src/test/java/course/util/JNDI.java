@@ -21,8 +21,6 @@ public class JNDI {
 		GLASSFISH_ENV.put( Context.INITIAL_CONTEXT_FACTORY, "com.sun.enterprise.naming.SerialInitContextFactory" );
 		GLASSFISH_ENV.put( Context.URL_PKG_PREFIXES, "com.sun.enterprise.naming" );
 		GLASSFISH_ENV.put( Context.STATE_FACTORIES, "com.sun.corba.ee.impl.presentation.rmi.JNDIStateFactoryImpl" );
-//		GLASSFISH_ENV.put( "org.omg.CORBA.ORBInitialHost", "localhost" );
-//		GLASSFISH_ENV.put( "org.omg.CORBA.ORBInitialPort", "3700" );
 	}
 
 

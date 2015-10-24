@@ -8,11 +8,12 @@
 	<packaging>pom</packaging>
     <name>java-ee6-jboss-example</name>
 	<description>Example for Java EE 6 compliant EAR with EJB 3 SLSB and SFSB prepared for JBoss AS 7.x</description>
-    <url></url>
+    <url>http://127.0.0.1:8080/webclient</url>
 	<properties>
 		<jboss.home>${env.JBOSS_HOME}</jboss.home>
 		<jboss.domain>default</jboss.domain>
         <java.version>1.6</java.version>
+        <javaee.version>6</javaee.version>
 	</properties>
 	<modules>
 		<module>application</module>

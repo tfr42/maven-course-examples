@@ -1,50 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>maven.course</groupId>
-		<artifactId>ejbs-parent</artifactId>
-		<version>1.0.0-SNAPSHOT</version>
+        <groupId>maven.course</groupId>
+        <artifactId>ejbs-parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>ejb3.application</artifactId>
 	<packaging>ear</packaging>
 	<name>Java EE 6 Enterprise Application Archive</name>
-  <url>http://127.0.0.1:8080/webclient/</url>
 
 	<build>
 		<finalName>ejb3.application</finalName>
 		<plugins>
-      <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-ear-plugin</artifactId>
-          <version>2.9.1</version>
-          <configuration>
-              <version>6</version>
-              <fileNameMapping>no-version</fileNameMapping>
-              <defaultLibBundleDir>lib</defaultLibBundleDir>
-              <modules>
-               <webModule>
-                 <groupId>${project.groupId}</groupId>
-                 <artifactId>ejb3.webclient</artifactId>
-                 <contextRoot>/webclient</contextRoot>
-               </webModule>
-            </modules>
-          </configuration>
-      </plugin>
-      <!-- Run and deploy to JBoss AS 7.x
-           https://docs.jboss.org/jbossas/7/plugins/maven/latest/index.html -->  
-			<plugin>
-        <groupId>org.jboss.as.plugins</groupId>
-        <artifactId>jboss-as-maven-plugin</artifactId>
-        <version>7.6.Final</version>
-				<configuration>
-					<jbossHome>${jboss.home}</jbossHome>
-					<serverName>${jboss.domain}</serverName>
-					<fileNames>
-						<fileName>${project.build.directory}/${project.build.finalName}.ear</fileName>
-					</fileNames>
+           <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-ear-plugin</artifactId>
+              <version>2.10.1</version>
+              <configuration>
+                  <version>${javaee.version}</version>
+                  <fileNameMapping>no-version</fileNameMapping>
+                  <defaultLibBundleDir>lib</defaultLibBundleDir>
+                  <modules>
+                   <webModule>
+                     <groupId>${project.groupId}</groupId>
+                     <artifactId>ejb3.webclient</artifactId>
+                     <contextRoot>/webclient</contextRoot>
+                   </webModule>
+                </modules>
+              </configuration>
+           </plugin>
+           <!-- Use mvn jboss-as:run to
+                deploy and run the application on JBoss AS 7.x
+                https://docs.jboss.org/jbossas/7/plugins/maven/latest/index.html -->
+           <plugin>
+                <groupId>org.jboss.as.plugins</groupId>
+                <artifactId>jboss-as-maven-plugin</artifactId>
+                <version>7.7.Final</version>
+                <configuration>
+                    <jbossHome>${jboss.home}</jbossHome>
+                    <serverName>${jboss.domain}</serverName>
+                    <fileNames>
+                        <fileName>${project.build.directory}/${project.build.finalName}.ear</fileName>
+                    </fileNames>
 <!--                     <deployEnabled>false</deployEnabled> -->
                     <executions>
                       <execution>
@@ -69,9 +70,9 @@
                                 </properties>
                             </resource>
                         </configuration>
-                    </execution>
-                </executions>
-				</configuration>
+                      </execution>
+                    </executions>
+               </configuration>
 			</plugin>
 		</plugins>
 	</build>

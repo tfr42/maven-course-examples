@@ -1,6 +1,7 @@
 package course.server;
 
 import java.io.Serializable;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -62,7 +63,7 @@ public class WarenkorbBean implements Warenkorb, WarenkorbLocal, Serializable {
 	}
 
 	public Map<String, Integer> getInhalt() {
-		return map;
+		return Collections.unmodifiableMap(map);
 	}
 
 	@Remove
