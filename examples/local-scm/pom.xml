@@ -15,10 +15,10 @@
 
   <scm>
     <connection>
-  		scm:local:/User/tf/git/maven-course-examples:local-scm
+  		scm:local:/${user.home}/git/maven-course-examples:local-scm
   	</connection>
     <developerConnection>
-  		scm:local:/User/tf/git/maven-course-examples:local-scm
+  		scm:local:/User/${user.home}/git/maven-course-examples:local-scm
   	</developerConnection>
   </scm>
 
