@@ -2,14 +2,19 @@ package course.jaxws.webservice;
 
 import javax.xml.ws.Endpoint;
 
-import junit.framework.TestCase;
 import course.jaxws.fraction.Fraction;
 import course.jaxws.fraction.FractionBean;
 import course.jaxws.generated.BruchDienst;
 import course.jaxws.generated.FractionBeanService;
+import org.junit.Test;
 
-public class FractionTest extends TestCase {
-	
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
+public class FractionTest {
+
+	@Test
 	public void testLocalBruch() {
 		Fraction bruch = new FractionBean();
 
@@ -24,7 +29,8 @@ public class FractionTest extends TestCase {
 		assertEquals(0, bruch.getValue(), 0.00001);
 		assertTrue(bruch.isNull());
 	}
-	
+
+	@Test
 	public void testWSBruch() {
 		Endpoint endpoint = Endpoint.publish("http://localhost:9000/services",	new FractionBean());
 		try {
