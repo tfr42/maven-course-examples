@@ -39,7 +39,7 @@
   			<version>2.5.3</version>
   			<configuration>
   				<commitByProject>true</commitByProject>
-  				<arguments>-N</arguments>
+  				<arguments>-N -e</arguments>
   				<pomFileName>examples/simple-release/pom.xml</pomFileName>
   			</configuration>
   		</plugin>
