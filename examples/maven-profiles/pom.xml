@@ -6,8 +6,8 @@
 	<artifactId>maven-profiles</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	<name>profiles-examples</name>
-	<description>Example using profiles for different environments</description>
+	<name>profiles-example</name>
+	<description>Example using profiles for different build environments</description>
 
 	<dependencyManagement>
 		<dependencies>
