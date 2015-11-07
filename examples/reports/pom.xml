@@ -90,7 +90,7 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
-			<version>4.0.1.GA</version>
+			<version>4.0.2.GA</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
