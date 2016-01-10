@@ -40,7 +40,7 @@
 	<build>
 		<!--
 			Simply run:
-			mvn -s src/main/resources/config/settings.xml
+			mvn -s src/main/resources/config/settings.xml deploy
 		-->
 		<defaultGoal>deploy</defaultGoal>
 	</build>
