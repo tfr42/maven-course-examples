@@ -1,3 +1,7 @@
+### Continuous Dependency Updating
+
+[![Dependency Status](https://www.versioneye.com/user/projects/56ad588c314d03000eba7b82/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56ad588c314d03000eba7b82)
+
 ### VersionEye Maven Plugin
 
 The [VersionEye Maven Plugin](https://github.com/versioneye/versioneye_maven_plugin) is a Maven Plugin for the [VersionEye API](https://www.versioneye.com/api/). 
