@@ -1,5 +1,6 @@
 package course;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import javax.persistence.EntityManager;
@@ -37,11 +38,14 @@ public class CustomerTest {
 	@Test
 	public void testCreate() {
 		Customer customer = new Customer ();
-		customer.setId(1);
+		Long pk = Long.valueOf(1);
+		customer.setId(pk);
 		em.getTransaction().begin(); 
 		em.persist(customer);
 		em.getTransaction().commit();
-		assertNotNull(customer);
+		Customer persistentCustomer = em.find(Customer.class, pk);
+		assertNotNull(persistentCustomer);
+		assertEquals(pk, persistentCustomer.getId());
 	}
 
 }
