@@ -53,6 +53,7 @@
 
 	<build>
 		<finalName>ejb-jboss-simple</finalName>
+		<defaultGoal>jboss-as:run</defaultGoal>
 		<plugins>
 			<!--  Facilitates downloading source and javadoc in Eclipse -->
 			<plugin>
@@ -70,7 +71,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.3</version>
+				<version>3.5</version>
 				<configuration>
 					<source>${java.version}</source>
 					<target>${java.version}</target>
