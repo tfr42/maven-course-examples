@@ -7,7 +7,7 @@
 	<name>mvn.03.solution-assembly</name>
 	<description>Lösung für Übungsaufgabe 3 - Assembly mit Filter und Reporting</description>
 	<properties>
-		<jdk.version>1.6</jdk.version>
+		<jdk.version>1.7</jdk.version>
 		<main.class>com.sonatype.maven.weather.yahoo.Main</main.class>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
