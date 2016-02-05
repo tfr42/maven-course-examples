@@ -40,7 +40,7 @@
 		<maven.project.info.reports.plugin>2.8.1</maven.project.info.reports.plugin>
 		<maven.site.plugin>3.4</maven.site.plugin>
 		<maven.sonar.plugin>2.7.1</maven.sonar.plugin>
-		<maven.surefire.plugin>2.19</maven.surefire.plugin>
+		<maven.surefire.plugin>2.19.1</maven.surefire.plugin>
 		<maven.taglist.plugin>2.4</maven.taglist.plugin>
 		<maven.versions.plugin>2.2</maven.versions.plugin>
         <maven.jdepend.plugin>2.0</maven.jdepend.plugin>
