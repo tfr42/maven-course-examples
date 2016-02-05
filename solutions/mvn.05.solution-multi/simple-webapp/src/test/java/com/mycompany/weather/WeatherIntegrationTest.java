@@ -30,7 +30,7 @@ public class WeatherIntegrationTest extends TestCase {
         // Now submit the form. WebDriver will find the form for us from the element
         element.submit();
 
-        LOG.info("Url is: " + driver.getCurrentUrl());
+        LOG.info("Form submitted to: " + driver.getCurrentUrl());
         
         // Wait for the page to load, timeout after 10 seconds
         (new WebDriverWait(driver, 10)).until(new ExpectedCondition<String>() {
