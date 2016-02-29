@@ -1,5 +1,7 @@
 package course.example;
 
+import org.hibernate.annotations.DynamicUpdate;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -7,7 +9,7 @@ import javax.persistence.OneToOne;
 
 
 @Entity
-@org.hibernate.annotations.Entity(dynamicUpdate = true)
+@DynamicUpdate(value = true)
 public class Customer {
 
 	@Id

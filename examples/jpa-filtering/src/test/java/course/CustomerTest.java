@@ -25,7 +25,7 @@ public class CustomerTest {
 
 	@After
 	public void tearDown() throws Exception {
-		if (em.isOpen()) {
+		if (em != null && em.isOpen()) {
 			if (em.getTransaction().isActive()) {
 				em.getTransaction().rollback();
 			}
