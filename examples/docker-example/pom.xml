@@ -12,7 +12,10 @@
         <java.major.version>8</java.major.version>
     </properties>
     <build>
-        <!-- mvn package docker:build -Djava.major.version=9 -->
+        <!-- To build the Docker image and to run the Docker container execute:
+             mvn package docker:build -Djava.major.version=9
+             docker run docker-example
+        -->
         <defaultGoal>package docker:build</defaultGoal>
         <plugins>
             <plugin>
