@@ -37,11 +37,17 @@
     <module>versioneye-plugin-example</module>
   </modules>
   <profiles>
-  	<profile>
+   	<profile>
   		<id>flex</id>
   		<modules>
   		    <module>flex-multiproject</module>
   		</modules>
   	</profile>
+    <profile>
+      <id>docker</id>
+      <modules>
+        <module>docker-example</module>
+      </modules>
+    </profile>
   </profiles>
 </project>

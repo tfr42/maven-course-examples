@@ -7,7 +7,12 @@
     <version>1.0.0-SNAPSHOT</version>
     <name>docker-example</name>
     <description>Example using Docker maven plugin to run a Docker container</description>
+    <properties>
+        <main.class>course.maven.App</main.class>
+        <java.major.version>8</java.major.version>
+    </properties>
     <build>
+        <!-- mvn package docker:build -Djava.major.version=9 -->
         <defaultGoal>package docker:build</defaultGoal>
         <plugins>
             <plugin>
@@ -16,7 +21,8 @@
                 <version>0.4.1</version>
                 <configuration>
                     <imageName>${project.artifactId}</imageName>
-                    <baseImage>java</baseImage>
+                    <!-- https://hub.docker.com/_/java/ -->
+                    <baseImage>java:${java.major.version}-jdk</baseImage>
                     <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
                     <!-- copy the service's jar file from target into the root directory of the image -->
                     <resources>
@@ -26,6 +32,28 @@
                             <include>${project.build.finalName}.jar</include>
                         </resource>
                     </resources>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>${main.class}</mainClass>
+                            <addClasspath>true</addClasspath>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5</version>
+                <configuration>
+                    <source>1.${java.major.version}</source>
+                    <target>1.${java.major.version}</target>
                 </configuration>
             </plugin>
         </plugins>
