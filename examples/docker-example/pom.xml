@@ -18,7 +18,7 @@
         <finalName>${project.artifactId}</finalName>
         <!-- To build the Docker image and to run the Docker container execute:
              mvn package -Djava.major.version=9
-             docker run --rm tfr42/docker-example:1.0.0-SNAPSHOT
+             docker run tfr42/docker-example:1.0.0-SNAPSHOT
         -->
         <defaultGoal>package</defaultGoal>
         <resources>

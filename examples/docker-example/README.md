@@ -1,9 +1,9 @@
-# Maven Docker Plugins
+# Maven Plugins for Docker
 
 This projects contains a sample ```Dockerfile``` for building a Docker image containing a sample Java application.
 The Docker image is build by a Maven plugin.
 
-The following Maven plugins are available:
+The following Maven plugins for Docker are available:
  * https://github.com/wouterd/docker-maven-plugin 
  * https://github.com/spotify/docker-maven-plugin
  * https://github.com/fabric8io/docker-maven-plugin
