@@ -13,7 +13,11 @@ This project uses the ```net.wouterdanes.docker:docker-maven-plugin:5.0.0```. Ru
 
     % mvn package
     
-To run the Docker container use:
+Use the property ```java.major.version``` to specify the Java SE version. To build the Docker image with Java 1.7 run:
+    
+    % mvn clean package -Djava.major.version=7
+
+To run the Docker container execute:
     
     % docker run --rm tfr42/docker-example:1.0.0-SNAPSHOT 
 

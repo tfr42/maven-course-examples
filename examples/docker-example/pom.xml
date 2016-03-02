@@ -13,15 +13,14 @@
         <java.major.version>8</java.major.version>
         <!-- https://hub.docker.com/_/java/ -->
         <docker.baseImage>java:${java.major.version}-jdk</docker.baseImage>
-
     </properties>
     <build>
         <finalName>${project.artifactId}</finalName>
         <!-- To build the Docker image and to run the Docker container execute:
-             mvn package docker:build -Djava.major.version=9
-             docker run docker-example
+             mvn package -Djava.major.version=9
+             docker run --rm tfr42/docker-example:1.0.0-SNAPSHOT
         -->
-        <defaultGoal>package </defaultGoal>
+        <defaultGoal>package</defaultGoal>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
