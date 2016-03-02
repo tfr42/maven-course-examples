@@ -7,35 +7,68 @@
     <version>1.0.0-SNAPSHOT</version>
     <name>docker-example</name>
     <description>Example using Docker maven plugin to build a Docker image</description>
+    <url>https://jaxenter.de/docker-mit-maven-steuern-20211</url>
     <properties>
         <main.class>course.maven.App</main.class>
         <java.major.version>8</java.major.version>
+        <!-- https://hub.docker.com/_/java/ -->
+        <docker.baseImage>java:${java.major.version}-jdk</docker.baseImage>
+
     </properties>
     <build>
+        <finalName>${project.artifactId}</finalName>
         <!-- To build the Docker image and to run the Docker container execute:
              mvn package docker:build -Djava.major.version=9
              docker run docker-example
         -->
-        <defaultGoal>package docker:build</defaultGoal>
+        <defaultGoal>package </defaultGoal>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
-                <groupId>com.spotify</groupId>
+                <!-- Example project how to use different maven Docker plugins
+                     https://github.com/fabric8io/shootout-docker-maven
+                -->
+                <groupId>net.wouterdanes.docker</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
-                <version>0.4.1</version>
-                <configuration>
-                    <imageName>${project.artifactId}</imageName>
-                    <!-- https://hub.docker.com/_/java/ -->
-                    <baseImage>java:${java.major.version}-jdk</baseImage>
-                    <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
-                    <!-- copy the service's jar file from target into the root directory of the image -->
-                    <resources>
-                        <resource>
-                            <targetPath>/</targetPath>
-                            <directory>${project.build.directory}</directory>
-                            <include>${project.build.finalName}.jar</include>
-                        </resource>
-                    </resources>
-                </configuration>
+                <version>5.0.0</version>
+                <executions>
+                    <execution>
+                        <id>build</id>
+                        <goals>
+                            <goal>build-images</goal>
+                        </goals>
+                        <configuration>
+                            <images>
+                                <image>
+                                    <id>${project.artifactId}</id>
+                                    <nameAndTag>tfr42/${project.artifactId}:${project.version}</nameAndTag>
+                                    <dockerFile>${project.build.directory}/classes/Dockerfile</dockerFile>
+                                    <buildArguments>
+                                        <jarfile>${project.build.finalName}.jar</jarfile>
+                                    </buildArguments>
+                                    <artifacts>
+                                        <!-- copy the jar file from target into the root directory of the image -->
+                                        <artifact>
+                                            <file>${project.build.directory}/${project.build.finalName}.jar</file>
+                                        </artifact>
+                                    </artifacts>
+                                    <mavenArtifacts>
+                                        <mavenArtifact>
+                                            <dependency>junit:junit:jar:4.11</dependency>
+                                            <dest>junit.jar</dest>
+                                        </mavenArtifact>
+                                    </mavenArtifacts>
+                                    <keep>false</keep>
+                                </image>
+                            </images>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
