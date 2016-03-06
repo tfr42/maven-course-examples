@@ -7,7 +7,8 @@
 	<artifactId>jaxws-code-generation</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>JAX-WS Code Generation - Contract First Solution with JAX-WS 2.2 on JBoss Wildfly 10</name>
+	<name>jaxws-code-generation-example</name>
+	<description>JAX-WS Code Generation - Contract First Solution with JAX-WS 2.2 on JBoss Wildfly 10</description>
 	<url>http://localhost:8080/helloworld/HelloService?wsdl</url>
 
 	<pluginRepositories>
