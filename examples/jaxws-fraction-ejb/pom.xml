@@ -144,6 +144,11 @@
 					<testFailureIgnore>${ignoreFailures}</testFailureIgnore>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.glassfish.maven.plugin</groupId>
+				<artifactId>maven-glassfish-plugin</artifactId>
+				<version>2.1</version>
+			</plugin>
 		</plugins>
 	</build>
 	
