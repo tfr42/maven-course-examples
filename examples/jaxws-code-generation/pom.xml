@@ -7,7 +7,15 @@
 	<artifactId>jaxws-code-generation</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>JAX-WS Code Generation - Contract First Solution</name>
+	<name>JAX-WS Code Generation - Contract First Solution with JAX-WS 2.2 on JBoss Wildfly 10</name>
+	<url>http://localhost:8080/helloworld/HelloService?wsdl</url>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>smartbear-sweden-plugin-repository</id>
+			<url>http://www.soapui.org/repository/maven2/</url>
+		</pluginRepository>
+	</pluginRepositories>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -17,7 +25,7 @@
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
-			<version>6.0</version>
+			<version>7.0</version>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
@@ -66,8 +74,8 @@
 				<version>3.5</version>
 				<configuration>
 					<encoding>UTF-8</encoding>
-					<source>1.7</source>
-					<target>1.7</target>
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -94,9 +102,46 @@
 				<groupId>org.wildfly.plugins</groupId>
 				<artifactId>wildfly-maven-plugin</artifactId>
 				<version>1.0.2.Final</version>
+				<executions>
+					<execution>
+						<id>pre-integration-phase</id>
+						<phase>pre-integration-test</phase>
+						<goals>
+							<goal>start</goal>
+							<goal>deploy</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>post-integration-phase</id>
+						<phase>post-integration-test</phase>
+						<goals>
+							<goal>shutdown</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<!-- https://www.soapui.org/test-automation/maven/maven-2-x.html -->
+				<groupId>com.smartbear.soapui</groupId>
+				<artifactId>soapui-maven-plugin</artifactId>
+				<version>5.1.1</version>
 				<configuration>
-
+					<outputFolder>${project.build.directory}/soapui</outputFolder>
+					<junitReport>true</junitReport>
+					<exportAll>false</exportAll>
+					<printReport>true</printReport>
+					<testFailIgnore>false</testFailIgnore>
+					<projectFile>${project.basedir}/src/test/resources/HelloService-soapui-project.xml</projectFile>
 				</configuration>
+				<executions>
+					<execution>
+						<id>integration-test</id>
+						<phase>integration-test</phase>
+						<goals>
+							<goal>test</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 		<pluginManagement>

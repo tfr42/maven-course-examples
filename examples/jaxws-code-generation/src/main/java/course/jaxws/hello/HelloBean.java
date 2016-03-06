@@ -17,10 +17,10 @@ public class HelloBean {
 			name="greeting",
 			partName="body",
 			targetNamespace="http://course/hello") String say(@WebParam(name="name",partName="body")Name name) throws EmptyNameException {
-		if (name == null || name.getFirsName().isEmpty() || name.getLastName().isEmpty()) {
+		if (name == null || name.getFirstName().isEmpty() || name.getLastName().isEmpty()) {
 			throw new EmptyNameException();
 		}
-		return "Hello "+name.getFirsName()+" "+name.getLastName()+"!";
+		return "Hello, "+name.getFirstName()+" "+name.getLastName()+"!";
 	}
 
 }
