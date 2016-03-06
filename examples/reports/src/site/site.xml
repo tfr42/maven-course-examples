@@ -1,0 +1,13 @@
+<project name="${artifactId}">
+    <skin>
+        <groupId>org.apache.maven.skins</groupId>
+        <artifactId>maven-fluido-skin</artifactId>
+        <version>1.4</version>
+    </skin>
+    <body>
+        <menu name="Dependency Status">
+            <item href="README.html" name="README" />
+        </menu>
+        <menu ref="reports" inherit="bottom" />
+    </body>
+</project>
