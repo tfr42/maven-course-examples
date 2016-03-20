@@ -9,7 +9,7 @@
 	<description>Example using assembly plugin to build deployment artifact</description>
 	<properties>
     	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<tomcat.version>8.0.24</tomcat.version>
+		<tomcat.version>8.0.30</tomcat.version>
 	</properties>
 	<dependencies>
 		<dependency>
