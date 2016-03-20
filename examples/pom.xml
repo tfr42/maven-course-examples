@@ -20,6 +20,7 @@
     <module>jaxws-code-generation</module>
     <module>jaxws-fraction-ejb</module>
     <module>jaxws-fraction-service</module>
+    <module>jni-c-example</module>
     <module>jpa-code-generation</module>
     <module>jpa-filtering</module>
     <module>local-scm</module>
