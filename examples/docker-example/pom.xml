@@ -58,7 +58,7 @@
                                     </artifacts>
                                     <mavenArtifacts>
                                         <mavenArtifact>
-                                            <dependency>junit:junit:jar:4.11</dependency>
+                                            <dependency>junit:junit:jar:4.12</dependency>
                                             <dest>junit.jar</dest>
                                         </mavenArtifact>
                                     </mavenArtifacts>
