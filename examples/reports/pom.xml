@@ -52,7 +52,7 @@
 		<maven.taglist.plugin>2.4</maven.taglist.plugin>
 		<maven.versions.plugin>2.2</maven.versions.plugin>
         <maven.jdepend.plugin>2.0</maven.jdepend.plugin>
-        <maven.dependencycheck.plugin>1.3.5</maven.dependencycheck.plugin>
+        <maven.dependencycheck.plugin>1.3.5.1</maven.dependencycheck.plugin>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<skipTests>false</skipTests>
