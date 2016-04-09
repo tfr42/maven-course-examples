@@ -252,6 +252,7 @@
 		<plugin>
 			<groupId>org.apache.maven.plugins</groupId>
 			<artifactId>maven-resources-plugin</artifactId>
+			<version>2.7</version>
 			<executions>
 				<execution>
 					<!-- Copy the readme file to the site source files so that a page is generated from it. -->
