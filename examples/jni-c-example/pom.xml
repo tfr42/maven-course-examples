@@ -31,7 +31,7 @@
             <plugin>
                 <groupId>com.github.maven-nar</groupId>
                 <artifactId>nar-maven-plugin</artifactId>
-                <version>3.2.0</version>
+                <version>3.2.3</version>
                 <extensions>true</extensions>
                 <executions>
                     <!--
@@ -107,7 +107,7 @@
                 <configuration>
                     <executable>java</executable>
                     <arguments>
-                        <argument>-Djava.library.path=${build.directory}</argument>
+                        <argument>-Djava.library.path=${project.build.directory}</argument>
                         <argument>-classpath</argument>
                         <classpath/>
                         <argument>course.maven.HelloWorld</argument>
