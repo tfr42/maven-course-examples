@@ -99,16 +99,18 @@ public class NodeTest {
     @Test(timeout = 1000)
     public void verifyBulkLoad() {
         em.getTransaction().begin();
-
+        Node root = new Node("A");
         for(int i = 0; i<10; i++) {
-            Node root = new Node("A"+i);
+            Node level1Node = new Node("B"+i);
+            level1Node.setParent(root);
             for (int j=0; j<5; j++) {
-                Node node = new Node("B"+i+j);
-                node.setParent(root);
+                Node level2Node = new Node("C"+i+j);
+                level2Node.setParent(root);
             }
             em.persist(root);
         }
-        em.createQuery("from Node as n").getResultList();
+        List resultList = em.createQuery("from Node as n").getResultList();
+        System.out.println(resultList);
         em.getTransaction().commit();
     }
 
