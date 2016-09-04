@@ -20,12 +20,12 @@
 		<url>https://travis-ci.org/tfr42/maven-course-examples</url>
 	</ciManagement>
   
-  <scm>
-    <connection>scm:git:https://github.com/tfr42/maven-course-examples.git</connection>
-    <developerConnection>scm:git:https://github.com/tfr42/maven-course-examples.git</developerConnection>
-    <url>https://github.com/tfr42/maven-course-examples/</url>  
-    <tag>HEAD</tag>
-  </scm>
+	<scm>
+		<connection>scm:git:https://github.com/tfr42/maven-course-examples.git</connection>
+		<developerConnection>scm:git:https://github.com/tfr42/maven-course-examples.git</developerConnection>
+		<url>https://github.com/tfr42/maven-course-examples/</url>
+		<tag>HEAD</tag>
+	</scm>
 
 	<distributionManagement>
 		<site>
