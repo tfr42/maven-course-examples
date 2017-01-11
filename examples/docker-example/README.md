@@ -27,4 +27,6 @@ about Docker!
 Very helpful information about Docker and Maven Plugins can be found here:
  * https://github.com/fabric8io/shootout-docker-maven
  * https://jaxenter.de/docker-mit-maven-steuern-20211 (German)
+ * https://jaxenter.de/docker-mit-maven-steuern-20211 (German)
  * http://ro14nd.de/talks/2014/wjax-docker-fuer-entwickler.pdf (slides in German)
+ * http://www.slideshare.net/robertreiz/docker-39958028 (slides in in English)
