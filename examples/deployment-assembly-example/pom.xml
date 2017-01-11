@@ -7,6 +7,7 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<name>deployment-assembly-example</name>
 	<description>Example using assembly plugin to build deployment artifact</description>
+	<url>http://localhost:8080/drools-guvnor-5.1.1/</url>
 	<properties>
     	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<tomcat.version>8.0.35</tomcat.version>
