@@ -256,7 +256,7 @@
                 <plugin>
 		          <groupId>org.owasp</groupId>
 		          <artifactId>dependency-check-maven</artifactId>
-		          <version>1.4.2</version>
+		          <version>1.4.3</version>
 		          <executions>
 		              <execution>
 		                  <goals>
@@ -270,15 +270,7 @@
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-failsafe-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
