@@ -164,6 +164,20 @@
 		</dependency>
 	</dependencies>
 
+<!-- TODO replace the spring dependencies above with Spring 3.2 BOM (Bill of Materials)
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>maven.course</groupId>
+				<artifactId>spring-bom</artifactId>
+				<version>3.2</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+-->
+	
   <build>
     <defaultGoal>site</defaultGoal>
 	<plugins>
