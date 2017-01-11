@@ -7,11 +7,11 @@
     <version>1.0.0-SNAPSHOT</version>
     <name>docker-example</name>
     <description>Example using Docker maven plugin to build a Docker image</description>
-    <url>https://jaxenter.de/docker-mit-maven-steuern-20211</url>
     <properties>
         <main.class>course.maven.App</main.class>
+        <!-- Supported Major versions are: 6,7,8,9 -->
         <java.major.version>8</java.major.version>
-        <!-- https://hub.docker.com/_/java/ -->
+        <!-- https://hub.docker.com/_/openjdk/ -->
         <docker.baseImage>java:${java.major.version}-jdk</docker.baseImage>
     </properties>
     <build>
