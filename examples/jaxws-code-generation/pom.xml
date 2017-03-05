@@ -102,7 +102,7 @@
 			<plugin>
 				<groupId>org.wildfly.plugins</groupId>
 				<artifactId>wildfly-maven-plugin</artifactId>
-				<version>1.0.2.Final</version>
+				<version>1.1.0.Final</version>
 				<executions>
 					<execution>
 						<id>pre-integration-phase</id>
