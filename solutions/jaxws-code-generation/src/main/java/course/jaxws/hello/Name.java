@@ -10,16 +10,16 @@ import javax.xml.bind.annotation.XmlType;
 public class Name {
 
 	@XmlElement
-	private String firsName;
+	private String firstName;
 	@XmlElement
 	private String lastName;
 
-	public String getFirsName() {
-		return firsName;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setFirsName(String firsName) {
-		this.firsName = firsName;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
 	public String getLastName() {
