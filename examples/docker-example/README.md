@@ -13,20 +13,19 @@ This project uses the ```net.wouterdanes.docker:docker-maven-plugin:5.0.0```. Ru
 
     % mvn package
     
-Use the property ```java.major.version``` to specify the Java SE version. To build the Docker image with Java 1.7 run:
+Use the property ```java.major.version``` to specify the Java SE version. To build the Docker image with Java 1.9 run:
     
-    % mvn clean package -Djava.major.version=7
+    % mvn clean package -Djava.major.version=9
 
 To run the Docker container execute:
     
     % docker run --rm tfr42/docker-example:1.0.0-SNAPSHOT 
 
-The [Docker web site](https://www.docker.com/) provides all information 
-about Docker! 
+Check the [Docker web site](https://www.docker.com/) for more information about Docker! 
 
-Very helpful information about Docker and Maven Plugins can be found here:
+Very helpful information about Docker and Maven Plugins for Docker can be found here:
  * https://github.com/fabric8io/shootout-docker-maven
  * https://jaxenter.de/docker-mit-maven-steuern-20211 (German)
- * https://jaxenter.de/docker-mit-maven-steuern-20211 (German)
+ * https://github.com/rossbachp/dockerbox (Setup docker environment with Vagrant, German)
  * http://ro14nd.de/talks/2014/wjax-docker-fuer-entwickler.pdf (slides in German)
  * http://www.slideshare.net/robertreiz/docker-39958028 (slides in in English)
