@@ -4,7 +4,7 @@
 	<groupId>maven.course</groupId>
 	<artifactId>maven-source-plugin</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
-	<name>attache-sources-example</name>
+	<name>attach-sources-example</name>
 	<description>Example using source and javadoc plugin to attach the source and javadoc files</description>
 	
 	<properties>
