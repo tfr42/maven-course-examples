@@ -3,7 +3,7 @@ jdk:
   - openjdk7
   - oraclejdk7
   - oraclejdk8
-env: MAVEN_OPTS="-Xmx1536m -XX:MaxPermSize=256m"
+env: MAVEN_OPTS="-Xmx2g -XX:MaxPermSize=512m"
 sudo: false
 cache:
   directories:
