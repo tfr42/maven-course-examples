@@ -27,9 +27,6 @@
 			</modules>
 		</profile>
 	</profiles>
-	<prerequisites>
-		<maven>[3.0.5,)</maven>
-	</prerequisites>
     <licenses>
       <license>
         <name>GPLv3</name>
