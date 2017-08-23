@@ -61,10 +61,6 @@
 		<sonar.host.url>http://localhost/sonar</sonar.host.url>
 	</properties>
   
-    <prerequisites>
-      <maven>3.0.5</maven>
-    </prerequisites>
-
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
