@@ -6,7 +6,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
-public class JNDI {
+public final class JNDI {
 	
 	public static final Hashtable<String,String> JBOSS_ENV = new Hashtable<String,String>();
 	public static final Hashtable<String,String> GLASSFISH_ENV = new Hashtable<String,String>();
@@ -34,5 +34,7 @@ public class JNDI {
 	public static Object lookup(String path) throws NamingException {
 		return lookup( DEFAULT_ENV, path );
 	}
+
+	private JNDI() {}
 
 }
