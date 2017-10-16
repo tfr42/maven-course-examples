@@ -7,7 +7,7 @@
 	<artifactId>jaxb-code-generation</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<name>jaxb-code-generation-example</name>
-	<description>Example using jaxb plugin to generate source code from XSD</description>
+	<description>Example using JAXB plugin to generate source code from XSD</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
