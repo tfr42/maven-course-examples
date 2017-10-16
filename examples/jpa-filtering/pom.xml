@@ -8,14 +8,6 @@
 	<name>jpa-filter-example</name>
 	<description>Example using JPA 2.1 with Hibernate EntityManager Persistence Provider</description>
 
-	<repositories>
-		<repository>
-			<id>JBoss</id>
-			<name>JBoss Repository</name>
-			<url>http://repository.jboss.org/nexus/content/groups/public-jboss/</url>
-		</repository>
-	</repositories>
-
 	<build>
 		<plugins>
 			<plugin>
@@ -58,17 +50,17 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
-			<version>5.0.9.Final</version>
+			<version>5.2.11.Final</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-orm</artifactId>
-			<version>4.2.6.RELEASE</version>
+			<version>4.3.11.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
-			<version>4.2.6.RELEASE</version>
+			<version>4.3.11.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.inject</groupId>
@@ -89,12 +81,12 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-aspects</artifactId>
-			<version>4.2.6.RELEASE</version>
+			<version>4.3.11.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjweaver</artifactId>
-			<version>1.7.4</version>
+			<version>1.8.10</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
@@ -105,7 +97,7 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
-			<version>4.2.6.RELEASE</version>
+			<version>4.3.11.RELEASE</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
