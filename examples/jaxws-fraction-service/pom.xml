@@ -5,7 +5,9 @@
 	<artifactId>jaxws-fraction-service</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>JAX-WS - Web Service</name>
+	<name>jaxws-fraction-service-example</name>
+	<description>Example for Web Service on JBoss AS 7</description>
+	<url>http://localhost:8080/jaxws-fraction-service</url>
 	<dependencies>           
 		<dependency>
 			<groupId>javax</groupId>
@@ -52,15 +54,15 @@
 					<wsdlDirectory>${project.build.directory}/resources-generated</wsdlDirectory>
 					<sourceDestDir>${project.build.directory}/sources-generated</sourceDestDir>
 					<wsdlLocation>http://localhost:9000/services?wsdl</wsdlLocation>
-                                        <vmArgs>
-                                           <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
-                                        </vmArgs>
+					<vmArgs>
+					   <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+					</vmArgs>
 				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.6.1</version>
+				<version>3.6.2</version>
 				<configuration>
 					<source>1.7</source>
 					<target>1.7</target>        
@@ -85,54 +87,24 @@
 					</execution>
 				</executions>
 			</plugin>
-      <plugin>
-        <groupId>org.jboss.as.plugins</groupId>
-        <artifactId>jboss-as-maven-plugin</artifactId>
-        <version>7.9.Final</version>
-        <configuration>
-          <jbossHome>${jboss.home}</jbossHome>
-          <serverName>${jboss.domain}</serverName>
-          <fileNames>
-            <fileName>${project.build.directory}/${project.build.finalName}.war</fileName>
-          </fileNames>
-        </configuration>
-      </plugin>
+		  <plugin>
+			<groupId>org.jboss.as.plugins</groupId>
+			<artifactId>jboss-as-maven-plugin</artifactId>
+			<version>7.9.Final</version>
+			<configuration>
+			  <jbossHome>${jboss.home}</jbossHome>
+			  <serverName>${jboss.domain}</serverName>
+			  <fileNames>
+				<fileName>${project.build.directory}/${project.build.finalName}.war</fileName>
+			  </fileNames>
+			</configuration>
+		  </plugin>
 		</plugins>
-		<pluginManagement>
-		  <plugins>
-		    <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
-		    <plugin>
-		      <groupId>org.eclipse.m2e</groupId>
-		      <artifactId>lifecycle-mapping</artifactId>
-		      <version>1.0.0</version>
-		      <configuration>
-		        <lifecycleMappingMetadata>
-		          <pluginExecutions>
-		            <pluginExecution>
-		              <pluginExecutionFilter>
-		                <groupId>org.jvnet.jax-ws-commons</groupId>
-		                <artifactId>jaxws-maven-plugin</artifactId>
-		                <versionRange>[2.3.1-b03,)</versionRange>
-		                <goals>
-		                  <goal>wsgen</goal>
-		                  <goal>wsimport</goal>
-		                </goals>
-		              </pluginExecutionFilter>
-		              <action>
-		                <ignore></ignore>
-		              </action>
-		            </pluginExecution>
-		          </pluginExecutions>
-		        </lifecycleMappingMetadata>
-		      </configuration>
-		    </plugin>
-		  </plugins>
-		</pluginManagement>
 	</build>
 	<properties>
 		<endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <jboss.home>${env.JBOSS_HOME}</jboss.home>
-    <jboss.domain>default</jboss.domain>
+		<jboss.home>${env.JBOSS_HOME}</jboss.home>
+		<jboss.domain>default</jboss.domain>
 	</properties>
 </project>
