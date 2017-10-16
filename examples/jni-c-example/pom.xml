@@ -133,32 +133,6 @@
                     </execution>
                 </executions>
             </plugin>
-            <!--
-                Workaround for OS X with Oracle JDK 8 to copy all jnilib to dylib files
-                https://developer.apple.com/library/mac/documentation/DeveloperTools/Conceptual/DynamicLibraries/000-Introduction/Introduction.html
-            -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-antrun-plugin</artifactId>
-                <version>1.8</version>
-                <executions>
-                    <execution>
-                        <id>copy-jnilib2dylib</id>
-                        <phase>prepare-package</phase>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                        <configuration>
-                            <target>
-                                <copy todir="${project.build.directory}/nar">
-                                    <fileset dir="${project.build.directory}/nar"/>
-                                    <globmapper from="*.jnilib" to="*.dylib"/>
-                                </copy>
-                            </target>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
     </build>
     <dependencies>
@@ -168,4 +142,44 @@
             <version>2.1.4</version>
         </dependency>
     </dependencies>
+    <profiles>
+        <profile>
+            <id>macOS</id>
+            <activation>
+                <os>
+                   <family>mac</family>
+                </os>
+            </activation>
+            <build>
+                <plugins>
+                    <!--
+                        Workaround for OS X with Oracle JDK 8 to copy all jnilib to dylib files
+                        https://developer.apple.com/library/mac/documentation/DeveloperTools/Conceptual/DynamicLibraries/000-Introduction/Introduction.html
+                    -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <version>1.8</version>
+                        <executions>
+                            <execution>
+                                <id>copy-jnilib2dylib</id>
+                                <phase>prepare-package</phase>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                                <configuration>
+                                    <target>
+                                        <copy todir="${project.build.directory}/nar">
+                                            <fileset dir="${project.build.directory}/nar"/>
+                                            <globmapper from="*.jnilib" to="*.dylib"/>
+                                        </copy>
+                                    </target>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
