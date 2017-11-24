@@ -37,7 +37,7 @@
             <artifactId>maven-assembly-plugin</artifactId>
             <configuration>
               <descriptors>
-                <descriptor>src/main/assembly/assembly-store-memory.xml</descriptor>
+                <descriptor>src/assembly/assembly-store-memory.xml</descriptor>
               </descriptors>
             </configuration>
           </plugin>
@@ -58,7 +58,7 @@
             <artifactId>maven-assembly-plugin</artifactId>
             <configuration>
               <descriptors>
-                <descriptor>src/main/assembly/assembly-store-xstream.xml</descriptor>
+                <descriptor>src/assembly/assembly-store-xstream.xml</descriptor>
               </descriptors>
             </configuration>
           </plugin>

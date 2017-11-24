@@ -42,16 +42,16 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>
-				<version>2.5.5</version>
+				<version>3.1.0</version>
 				<executions>
 					<execution>
 						<id>bundle</id>
 						<configuration>
 							<filters>
-								<filter>${project.basedir}/src/main/assembly/bundle-filter.properties</filter>
+								<filter>src/assembly/bundle-filter.properties</filter>
 							</filters>
 							<descriptors>
-								<descriptor>${project.basedir}/src/main/assembly/bundle-assembly.xml</descriptor>
+								<descriptor>src/assembly/bundle-assembly.xml</descriptor>
 							</descriptors>
 							<finalName>${project.artifactId}-${project.version}</finalName>
 						</configuration>
