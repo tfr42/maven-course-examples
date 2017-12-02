@@ -13,6 +13,9 @@
         <java.major.version>8</java.major.version>
         <!-- https://hub.docker.com/_/openjdk/ -->
         <docker.baseImage>java:${java.major.version}-jdk</docker.baseImage>
+        <!-- Docker daemon REST API -->
+        <docker.host>localhost</docker.host>
+        <docker.port>1234</docker.port>
     </properties>
     <build>
         <finalName>${project.artifactId}</finalName>
@@ -29,7 +32,7 @@
         </resources>
         <plugins>
             <plugin>
-                <!-- Example project how to use different maven Docker plugins
+                <!-- More Maven Docker plugins at
                      https://github.com/fabric8io/shootout-docker-maven
                 -->
                 <groupId>net.wouterdanes.docker</groupId>
@@ -51,7 +54,7 @@
                                         <jarfile>${project.build.finalName}.jar</jarfile>
                                     </buildArguments>
                                     <artifacts>
-                                        <!-- copy the jar file from target into the root directory of the image -->
+                                        <!-- copies the jar file from target into the root directory of the image -->
                                         <artifact>
                                             <file>${project.build.directory}/${project.build.finalName}.jar</file>
                                         </artifact>
@@ -85,7 +88,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.6.1</version>
+                <version>3.6.2</version>
                 <configuration>
                     <source>1.${java.major.version}</source>
                     <target>1.${java.major.version}</target>
