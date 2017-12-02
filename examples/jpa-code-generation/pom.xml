@@ -10,7 +10,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    	<spring.version>3.0.7.RELEASE</spring.version>
+    	<spring.version>3.2.14.RELEASE</spring.version>
 	</properties>
 
 	<build>
@@ -121,7 +121,7 @@
 		<dependency>
 			<groupId>hsqldb</groupId>
 			<artifactId>hsqldb</artifactId>
-			<version>1.8.0.10</version>
+			<version>1.8.1.1</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>

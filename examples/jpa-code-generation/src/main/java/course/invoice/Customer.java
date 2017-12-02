@@ -22,7 +22,6 @@ import org.hibernate.annotations.FetchMode;
 
 @Entity
 @Table(name="customer")
-@org.hibernate.annotations.Entity(dynamicUpdate = true)
 public class Customer {
 	
 	@Id
@@ -103,8 +102,6 @@ public class Customer {
 	public void setInvoices(List<Invoice> invoices) {
 		this.invoices = invoices;
 	}
-
-
 
 	public Gender getGender() {
 		return gender;
