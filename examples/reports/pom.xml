@@ -286,6 +286,16 @@
 				</execution>
 			</executions>
 		</plugin>
+		<plugin>
+			<groupId>org.codehaus.mojo</groupId>
+			<artifactId>animal-sniffer-maven-plugin</artifactId>
+			<version>1.16</version>
+			<configuration>
+				<jdk>
+					<version>[${java.version},)</version>
+				</jdk>
+			</configuration>
+		</plugin>
     </plugins>
   </build>
   
