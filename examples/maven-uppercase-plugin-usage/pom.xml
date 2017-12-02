@@ -47,20 +47,16 @@
 				<filtering>true</filtering>
 				<includes>
 					<include>**/*.xml</include>
-<!-- 					<include>**/*.properties</include> -->
 				</includes>
 			</resource>    
-			
 			<resource>
 				<directory>src/main/resources</directory>
 				<filtering>false</filtering>
 				<excludes>
-					<exclude>**/*.xml</exclude>
+					<exclude>**/*.properties</exclude>
 				</excludes>
 			</resource>
-			
 		</resources>
-
 	</build>
 
 	<dependencies>
