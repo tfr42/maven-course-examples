@@ -17,7 +17,7 @@ import javax.validation.constraints.NotNull;
 public class ApplicationLog {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	@NotNull

@@ -3,6 +3,7 @@ package de.crowdcode.vehicle.controller.spi;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 
 import de.crowdcode.vehicle.controller.ManufacturerController;
@@ -11,7 +12,7 @@ import de.crowdcode.vehicle.domain.Manufacturer;
 import de.crowdcode.vehicle.dto.ManufacturerDto;
 import de.crowdcode.vehicle.service.ManufacturerService;
 
-@Service
+@Controller
 public class ManufacturerControllerBean implements ManufacturerController {
     
     @Autowired

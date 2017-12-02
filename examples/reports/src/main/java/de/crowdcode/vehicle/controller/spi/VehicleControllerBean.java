@@ -3,6 +3,7 @@ package de.crowdcode.vehicle.controller.spi;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,7 +17,7 @@ import de.crowdcode.vehicle.dto.VehicleDto;
 import de.crowdcode.vehicle.service.ApplicationLogService;
 import de.crowdcode.vehicle.service.VehicleService;
 
-@Service
+@Controller
 public class VehicleControllerBean implements VehicleController {
 
     @Autowired
@@ -29,7 +30,6 @@ public class VehicleControllerBean implements VehicleController {
     private ApplicationLogService log;
     
     @Override
-    @Transactional
     public List<VehicleDto> findVehicleByManufacturer(String manufacturerName) {
         List<Vehicle> vehicles = vehicleService.getVehicleByManufacture(manufacturerName);
         return vehicleConverter.convert(vehicles);
