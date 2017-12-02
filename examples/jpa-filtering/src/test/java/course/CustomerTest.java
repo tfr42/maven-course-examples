@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import course.jpa.dbutil.PopulateDBWork;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -21,6 +22,7 @@ public class CustomerTest {
 	public void setUp() throws Exception {
 		emf = Persistence.createEntityManagerFactory("course-hsql");
 		em = emf.createEntityManager();
+		//PopulateDBWork.populate(em, "/db.xml" );
 	}
 
 	@After
@@ -36,9 +38,12 @@ public class CustomerTest {
    
 	@Test
 	public void testCreate() {
-		Customer customer = new Customer ();
-		customer.setId(1);
-		em.getTransaction().begin(); 
+		Customer customer = new Customer();
+		//customer.setId(1);
+		customer.setEmail("mail@host.com");
+		customer.setFirstName("Hans");
+		customer.setLastName("Dampf");
+		em.getTransaction().begin();
 		em.persist(customer);
 		em.getTransaction().commit();
 		assertNotNull(customer);

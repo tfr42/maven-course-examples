@@ -76,7 +76,8 @@
         <entry key="hibernate.connection.release_mode" value="on_close"/>
     </util:map>
 
-    <tx:annotation-driven transaction-manager="transactionManager" mode="aspectj"/>
+    <tx:annotation-driven/>
+
     <context:annotation-config/>
 
 </beans>

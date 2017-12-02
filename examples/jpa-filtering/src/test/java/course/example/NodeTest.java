@@ -4,6 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.test.annotation.Commit;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -27,7 +28,7 @@ import static org.junit.Assert.assertTrue;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:jpaContext.xml"})
 @Transactional
-@Rollback(false)
+@Commit
 public class NodeTest {
     @Inject
     private EntityManagerFactory emf;
@@ -69,7 +70,6 @@ public class NodeTest {
     public void afterTx() {
 
     }
-
 
     @Test @Transactional
     public void verifyThatTreeIsLoaded() {

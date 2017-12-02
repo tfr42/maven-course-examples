@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 import javax.persistence.EntityManager;
 
-import org.hibernate.ejb.HibernateEntityManager;
+import org.hibernate.jpa.HibernateEntityManager;
 import org.hibernate.jdbc.Work;
 
 /**

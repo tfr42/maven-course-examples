@@ -1,18 +1,16 @@
 package course.example;
 
-import org.hibernate.annotations.DynamicUpdate;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
-
 @Entity
-@DynamicUpdate(value = true)
 public class Customer {
 
 	@Id
+	@GeneratedValue
 	private Integer id;
 	
 	@Column(length=30)
