@@ -11,6 +11,8 @@
 	<properties>
     	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<tomcat.version>8.0.47</tomcat.version>
+		<main.class>de.crowdcode.maven.assembly.App</main.class>
+		<application.name>${project.name}</application.name>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -68,6 +70,29 @@
 						</goals>
 					</execution>
 				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>appassembler-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>assemble</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<repositoryLayout>flat</repositoryLayout>
+					<programs>
+						<program>
+							<mainClass>${main.class}</mainClass>
+							<name>${application.name}</name>
+						</program>
+					</programs>
+					<copyConfigurationDirectory>true</copyConfigurationDirectory>
+					<useWildcardClassPath>true</useWildcardClassPath>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
