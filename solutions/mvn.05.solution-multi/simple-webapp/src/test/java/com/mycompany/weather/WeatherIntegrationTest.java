@@ -40,7 +40,7 @@ public class WeatherIntegrationTest extends TestCase {
         });
         String actualPage = driver.getPageSource();
         LOG.info("Page content is: " + actualPage );
-        assertTrue(actualPage.contains("Boston, MA, US"));
+        assertTrue(actualPage.contains("Boston"));
 	}
 
 	protected void tearDown() {

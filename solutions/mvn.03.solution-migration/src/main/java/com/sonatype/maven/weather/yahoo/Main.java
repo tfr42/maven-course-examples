@@ -1,23 +1,22 @@
 package com.sonatype.maven.weather.yahoo;
 
-import java.io.InputStream;
-
+import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
 public class Main {
+
+	private static Logger log = Logger.getLogger(Main.class);
 
 	public static void main(String[] args) throws Exception {
 		// Configure Log4J
 		PropertyConfigurator.configure(Main.class.getClassLoader().getResource(	"log4j.properties"));
 
-		// Read the Zip Code from the Command-line (if none supplied, use 60202)
-		String zipcode = "02101";
-		try {
+		// Read the Zip Code from the Command-line (if none supplied, use 11201 for New York City)
+		String zipcode = "11201";
+		if (args != null && args.length > 0) {
 			zipcode = args[0];
-		} catch (Exception e) {    
-			System.out.println("no zip code provided - so lookup weather for 02101");
 		}
-
+		log.info("Using zip code: " + zipcode);
 		// Start the program
 		new Main(zipcode).start();
 	}
@@ -29,12 +28,7 @@ public class Main {
 	}
 
 	public void start() throws Exception {
-		// Retrieve Data
-		InputStream dataIn = new YahooRetriever().retrieve(zip);
-		// Parse Data
-		Weather weather = new YahooParser().parse(dataIn);
-		// Format (Print) Data
-		System.out.print(new WeatherFormatter().format(weather));
+		System.out.print( new WeatherService().retrieveForecast( zip ) );
 	}
 
 }

@@ -13,8 +13,8 @@ public class WeatherFormatter {
 
 	private static Logger log = Logger.getLogger(WeatherFormatter.class);
 
-	public String format( final Weather weather ) throws Exception {
-		log.info( "Formatting Weather Data" );
+	public String format( Weather weather ) throws Exception {
+		log.trace( "Formatting Weather Data :" + weather);
 		Reader reader = new InputStreamReader( getClass().getClassLoader().getResourceAsStream("output.vm"), Charset.forName("UTF-8"));
 		VelocityContext context = new VelocityContext();
 		context.put("weather", weather );

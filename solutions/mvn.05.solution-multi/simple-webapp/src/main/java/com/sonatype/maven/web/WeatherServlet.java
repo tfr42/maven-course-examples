@@ -1,6 +1,6 @@
 package com.sonatype.maven.web;
 
-import com.sonatype.maven.weather.WeatherService;
+import com.sonatype.maven.weather.yahoo.WeatherService;
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;

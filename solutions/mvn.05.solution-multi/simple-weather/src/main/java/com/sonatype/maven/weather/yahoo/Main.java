@@ -9,7 +9,7 @@ public class Main {
 
 	public static void main(String[] args) throws Exception {
 		// Configure Log4J
-		PropertyConfigurator.configure(Main.class.getClassLoader().getResource(	"log4j.properties"));
+		PropertyConfigurator.configure(Main.class.getClassLoader().getResource("log4j.properties"));
 
 		// Read the Zip Code from the Command-line (if none supplied, use 11201 for New York City)
 		String zipcode = "11201";

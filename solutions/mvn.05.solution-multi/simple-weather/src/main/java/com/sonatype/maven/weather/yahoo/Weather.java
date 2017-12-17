@@ -1,4 +1,4 @@
-package com.sonatype.maven.weather;
+package com.sonatype.maven.weather.yahoo;
 
 
 public class Weather {
@@ -32,4 +32,12 @@ public class Weather {
 
 	public String getHumidity() { return humidity; }
 	public void setHumidity(String humidity) { this.humidity = humidity; }
+
+	@Override
+	public String toString() {
+		return "Weather [city=" + city + ", region=" + region + ", country="
+				+ country + ", condition=" + condition + ", temp=" + temp
+				+ ", chill=" + chill + ", humidity=" + humidity + "]";
+	}
+
 }

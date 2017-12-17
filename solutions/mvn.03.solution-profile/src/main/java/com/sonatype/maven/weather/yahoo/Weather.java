@@ -39,6 +39,5 @@ public class Weather {
 				+ country + ", condition=" + condition + ", temp=" + temp
 				+ ", chill=" + chill + ", humidity=" + humidity + "]";
 	}
-	
-	
+
 }

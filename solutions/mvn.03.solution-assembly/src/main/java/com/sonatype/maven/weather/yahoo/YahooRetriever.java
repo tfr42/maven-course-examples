@@ -11,10 +11,13 @@ public final class YahooRetriever {
 
 	private static Logger log = Logger.getLogger(YahooRetriever.class);
 
-	public InputStream retrieve(final String zipcode) throws Exception {
-		log.info("Retrieving Weather Data for " + zipcode);
-		final String url = "http://weather.yahooapis.com/forecastrss?p=" + zipcode;
-		final URLConnection conn = new URL(url).openConnection();
+	public InputStream retrieve(String zipcode) throws Exception {
+		String url = "https://query.yahooapis.com/v1/public/yql?q=" +
+			"select%20*%20from%20weather.forecast%20where%20woeid%20in%20(" +
+			"select%20woeid%20from%20geo.places(1)%20where%20text%3D" + zipcode + ")&format=xml" +
+				"&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
+		log.info( "Retrieving Weather Data from: " + url);
+		URLConnection conn = new URL(url).openConnection();
 		if (useProxy() && useProxyAuthentication()) {
 			String httpProxyUser = System.getProperty("http.proxyUsername");
 			String httpProxyPassword = System.getProperty("http.proxyPassword");
@@ -22,6 +25,7 @@ public final class YahooRetriever {
 			Authenticator.setDefault(new ProxyAuthenticator(httpProxyUser,
 					httpProxyPassword));
 		}
+		log.debug("URLConnection established to: " + url);
 		return conn.getInputStream();
 	}
 

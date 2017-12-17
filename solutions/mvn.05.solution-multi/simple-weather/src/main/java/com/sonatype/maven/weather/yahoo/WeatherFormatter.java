@@ -1,4 +1,4 @@
-package com.sonatype.maven.weather;
+package com.sonatype.maven.weather.yahoo;
 
 import java.io.InputStreamReader;
 import java.io.Reader;
@@ -13,7 +13,7 @@ public class WeatherFormatter {
 	private static Logger log = Logger.getLogger(WeatherFormatter.class);
 
 	public String format( Weather weather ) throws Exception {
-		log.info( "Formatting Weather Data" );
+		log.trace( "Formatting Weather Data :" + weather);
 		Reader reader = new InputStreamReader( getClass().getClassLoader().getResourceAsStream("output.vm"));
 		VelocityContext context = new VelocityContext();
 		context.put("weather", weather );

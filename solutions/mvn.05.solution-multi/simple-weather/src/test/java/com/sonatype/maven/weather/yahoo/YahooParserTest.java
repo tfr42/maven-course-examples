@@ -4,9 +4,6 @@ import java.io.InputStream;
 
 import junit.framework.TestCase;
 
-import com.sonatype.maven.weather.Weather;
-import com.sonatype.maven.weather.YahooParser;
-
 public class YahooParserTest extends TestCase {
 
 	public YahooParserTest(String name) {
