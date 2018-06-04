@@ -120,8 +120,7 @@ public class LuhnTest {
 	    System.out.println( isVisa( "4111111111111111" ) );
 	    System.out.println( isVisa( "5500000000000004" ) );
 
-
-	    // Bšse: Visa-Nummer generieren
+	    // Bad: generates Visa-Numbers
 
 	    char c[] = "4123456789123456".toCharArray();
 
