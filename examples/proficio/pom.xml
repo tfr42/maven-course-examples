@@ -98,7 +98,10 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-javadoc-plugin</artifactId>
-            <version>2.10.4</version>
+            <version>3.0.1</version>
+            <configuration>
+              <doclint>none</doclint>
+            </configuration>
             <executions>
               <execution>
                 <goals><goal>jar</goal></goals>
@@ -143,9 +146,10 @@
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-javadoc-plugin</artifactId>
-            <version>2.10.4</version>
+            <version>3.0.1</version>
             <configuration>
                 <aggregate>true</aggregate>
+                <doclint>none</doclint>
             </configuration>
         </plugin>
         <plugin>
@@ -217,9 +221,9 @@
          <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-javadoc-plugin</artifactId>
-          <version>2.10.4</version>
+          <version>3.0.1</version>
           <configuration>
-           <additionalparam>-Xdoclint:none</additionalparam>
+              <doclint>none</doclint>
           </configuration>
          </plugin>
       </plugins>
@@ -229,9 +233,9 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.10.4</version>
+                <version>3.0.1</version>
                 <configuration>
-                    <additionalparam>-Xdoclint:none</additionalparam>
+                    <doclint>none</doclint>
                 </configuration>
             </plugin>
         </plugins>

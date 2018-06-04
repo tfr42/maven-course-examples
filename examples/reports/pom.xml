@@ -50,7 +50,7 @@
 		<maven.checkstyle.plugin>3.0.0</maven.checkstyle.plugin>
 		<maven.jacoco.plugin>0.8.0</maven.jacoco.plugin>
 		<maven.doxia.module.markdown.version>1.8</maven.doxia.module.markdown.version>
-		<maven.javadoc.plugin>3.0.0</maven.javadoc.plugin>
+		<maven.javadoc.plugin>3.0.1</maven.javadoc.plugin>
 		<maven.jxr.plugin>2.5</maven.jxr.plugin>
 		<maven.pmd.plugin>3.9.0</maven.pmd.plugin>
 		<maven.findbugs.plugin>3.0.5</maven.findbugs.plugin>
