@@ -48,7 +48,7 @@
 		<java.version>1.7</java.version>
 		<spring.version>3.2.18.RELEASE</spring.version>
 		<maven.checkstyle.plugin>3.0.0</maven.checkstyle.plugin>
-		<maven.jacoco.plugin>0.8.0</maven.jacoco.plugin>
+		<maven.jacoco.plugin>0.8.1</maven.jacoco.plugin>
 		<maven.doxia.module.markdown.version>1.8</maven.doxia.module.markdown.version>
 		<maven.javadoc.plugin>3.0.1</maven.javadoc.plugin>
 		<maven.jxr.plugin>2.5</maven.jxr.plugin>
