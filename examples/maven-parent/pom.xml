@@ -223,7 +223,7 @@
 					<artifactId>maven-site-plugin</artifactId>
 					<!-- 2.3 for maven 2.x -->
 					<!-- 3.x for maven 3.x -->
-					<version>3.5.1</version>
+					<version>3.7.1</version>
 				</plugin>
 				<plugin>
 		          <groupId>org.jacoco</groupId>
