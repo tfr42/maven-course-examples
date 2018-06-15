@@ -22,3 +22,7 @@ bin/
 *.prefs
 *.log
 .svn
+
+velocity.log.*
+*.versionsBackup
+*.releaseBackup
