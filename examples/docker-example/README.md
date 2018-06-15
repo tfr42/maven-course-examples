@@ -7,8 +7,7 @@ The following Maven plugins for Docker are available (stable and actively mainta
  * https://github.com/fabric8io/docker-maven-plugin
  * https://github.com/spotify/docker-maven-plugin
  * https://github.com/wouterd/docker-maven-plugin 
- * https://github.com/alexec/docker-maven-plugin 
-
+ 
 This project uses the ```net.wouterdanes.docker:docker-maven-plugin:5.0.0```. Run the following goal to build the image:
 
     % mvn package
