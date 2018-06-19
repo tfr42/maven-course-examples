@@ -10,7 +10,7 @@
 	<url>http://localhost:8080/drools-guvnor-5.1.1/</url>
 	<properties>
     	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<tomcat.version>8.0.47</tomcat.version>
+		<tomcat.version>8.0.52</tomcat.version>
 		<main.class>de.crowdcode.maven.assembly.App</main.class>
 		<application.name>${project.name}</application.name>
 	</properties>
