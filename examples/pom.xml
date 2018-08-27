@@ -35,7 +35,6 @@
     <module>reports</module>
     <module>simple-release</module>
     <module>spring-bom</module>
-    <module>versioneye-plugin-example</module>
   </modules>
   <profiles>
    	<profile>

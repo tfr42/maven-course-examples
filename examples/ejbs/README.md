@@ -1,3 +1,10 @@
-### Continuous Dependency Updating
+# Build the multi module project 
 
-[![Dependency Status](https://www.versioneye.com/user/projects/5588590a306662001a000080/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5588590a306662001a000080)
+    mvn clean install
+
+## Run the project on JBoss AS
+
+To deploy and run the application on JBoss AS 7.x run in the `application` submodule:    
+
+    cd application
+    mvn jboss-as:run     

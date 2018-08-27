@@ -1,3 +1,25 @@
-### Continuous Dependency Updating
+# Deploying to Nexus Repository Manager 
 
-[![Dependency Status](https://www.versioneye.com/user/projects/55885932306662001d000065/badge.svg?style=flat)](https://www.versioneye.com/user/projects/55885932306662001d000065)
+To deploy the build artifact a running instance of Nexus Repository OSS or Pro is required.
+
+To use the provided Maven `settings.xml` with the Nexus default accounts run Maven with:
+			
+    mvn -s src/main/resources/config/settings.xml deploy
+ 
+## Using docker to run Nexus Repository Manager
+
+Using the official image from https://hub.docker.com/r/sonatype/nexus3/:
+
+    $ docker pull sonatype/nexus3
+
+### Start docker container with Nexus Repository Manager
+
+To run, binding the exposed port 8081 to the host.
+     
+     $ docker run -d -p 8081:8081 --name nexus sonatype/nexus3   
+
+### Access Nexus Repository Manager
+
+http://localhost:8081/nexus
+
+Default admin user login (admin/admin123)    

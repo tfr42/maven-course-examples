@@ -1,3 +1,5 @@
-### Continuous Dependency Updating
+# Using versions Maven plugin
 
-[![Dependency Status](https://www.versioneye.com/user/projects/55885900306662001d000058/badge.svg?style=flat)](https://www.versioneye.com/user/projects/55885900306662001d000058)
+    mvn versions:resolve-ranges
+    
+Further information at https://www.mojohaus.org/versions-maven-plugin/
