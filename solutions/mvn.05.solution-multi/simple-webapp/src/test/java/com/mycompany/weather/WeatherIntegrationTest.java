@@ -16,7 +16,7 @@ public class WeatherIntegrationTest extends TestCase {
 	private WebDriver driver = new HtmlUnitDriver();
 
 	protected void setUp() {
-		driver.get("http://localhost:8080/");
+		driver.get("http://localhost:8088/");
 	}
 
 	public void testGetWeatherForZip02101() {

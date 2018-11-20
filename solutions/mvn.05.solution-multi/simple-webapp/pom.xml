@@ -9,7 +9,7 @@
 	<artifactId>simple-webapp</artifactId>
 	<packaging>war</packaging>
 	<name>Simple Weather Web Application with Integration Tests</name>
-	<url>http://localhost:8080/</url>
+	<url>http://localhost:8088/</url>
 	<dependencies>
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -77,6 +77,10 @@
 				<configuration>
 					<stopPort>8005</stopPort>
 					<stopKey>STOP</stopKey>
+					<httpConnector>
+						<port>8088</port>
+						<idleTimeout>60000</idleTimeout>
+					</httpConnector>
 				</configuration>
 				<executions>
 					<execution>
