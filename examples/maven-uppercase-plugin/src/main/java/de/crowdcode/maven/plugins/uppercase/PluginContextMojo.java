@@ -15,26 +15,25 @@ import org.apache.maven.project.MavenProject;
  */
 public class PluginContextMojo extends AbstractMojo {
 
-    /**
-     * @parameter expression="${project}"
-     * @readonly
-     */
-    protected MavenProject project;
-    
+	/**
+	 * @parameter expression="${project}"
+	 * @readonly
+	 */
+	protected MavenProject project;
+
 	public void execute() throws MojoExecutionException, MojoFailureException {
-		getLog().info("Name "+project.getArtifactId());
+		getLog().info("Name " + project.getArtifactId());
 		getLog().info("---------------------------------");
 		getLog().info("Context");
-		
-		for(Map.Entry<String,Object> entry : ((Map<String,Object>)getPluginContext()).entrySet()) {
+
+		for (Map.Entry<String, Object> entry : ((Map<String, Object>) getPluginContext()).entrySet()) {
 			try {
-			getLog().info("\t"+entry.getKey()+" - "+entry.getValue().getClass().getCanonicalName());
+				getLog().info("\t" + entry.getKey() + " - " + entry.getValue().getClass().getCanonicalName());
 			} catch (Exception e) {
-				getLog().info("\t"+entry.getKey());
+				getLog().info("\t" + entry.getKey());
 			}
 		}
-		
-		
+
 	}
 
 }

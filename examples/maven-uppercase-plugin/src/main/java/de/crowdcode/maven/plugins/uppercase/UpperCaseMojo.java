@@ -38,18 +38,18 @@ public class UpperCaseMojo extends AbstractMojo {
 	 * @required
 	 */
 	private File outputDirectory;
-	
+
 	/**
-	 * @parameter expression="${message}" default-value="Hello World!" 
+	 * @parameter expression="${message}" default-value="Hello World!"
 	 */
 	private String message;
-	
-    /**
-     * Directory containing resources files.
-     *
-     * @parameter default-value="${basedir}/src/main/resources"
-     */
-    private File sourceDirectory;
+
+	/**
+	 * Directory containing resources files.
+	 *
+	 * @parameter default-value="${basedir}/src/main/resources"
+	 */
+	private File sourceDirectory;
 
 	public void execute() throws MojoExecutionException {
 		if (!sourceDirectory.exists()) {
@@ -59,43 +59,32 @@ public class UpperCaseMojo extends AbstractMojo {
 		if (!outputDirectory.exists()) {
 			outputDirectory.mkdir();
 		}
-		
-		
+
 		File[] sourceFiles = sourceDirectory.listFiles();
 		processFiles(sourceFiles, outputDirectory);
 	}
-	
-	public void processFiles(final File[] sourceFiles, final File directory) throws MojoExecutionException {
+
+	private void processFiles(final File[] sourceFiles, final File directory) throws MojoExecutionException {
 		for (File file : sourceFiles) {
-			
-			File upperFile = new File(directory,file.getName().toUpperCase());
+
+			File upperFile = new File(directory, file.getName().toUpperCase());
 			if (file.isDirectory()) {
 				upperFile.mkdir();
 				processFiles(file.listFiles(), upperFile);
 			} else {
-				getLog().info("Found file "+file.getName());
+				getLog().info("Found file " + file.getName());
 				writeFile(upperFile);
 			}
 		}
-		
+
 	}
 
 	private void writeFile(File upperFile) throws MojoExecutionException {
-		FileWriter writer = null;
-		try {
-			writer = new FileWriter(upperFile);
+		try (FileWriter writer = new FileWriter(upperFile)) {
 			writer.write(message);
 		} catch (IOException e) {
 			throw new MojoExecutionException("Error creating file " + upperFile, e);
-		} finally {
-			if (writer != null) {
-				try {
-					writer.close();
-				} catch (IOException e) {
-					// ignore
-				}
-			}
 		}
 	}
-	
+
 }

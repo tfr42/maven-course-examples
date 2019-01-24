@@ -30,52 +30,29 @@ import java.io.IOException;
  * 
  * @phase process-sources
  */
-public class MyMojo
-    extends AbstractMojo
-{
+public class MyMojo extends AbstractMojo {
     /**
      * Location of the file.
+     * 
      * @parameter expression="${project.build.directory}"
      * @required
      */
     private File outputDirectory;
 
-    public void execute()
-        throws MojoExecutionException
-    {
+    public void execute() throws MojoExecutionException {
         File f = outputDirectory;
 
-        if ( !f.exists() )
-        {
+        if (!f.exists()) {
             f.mkdirs();
         }
 
-        File touch = new File( f, "touch.txt" );
+        File touch = new File(f, "touch.txt");
 
-        FileWriter w = null;
-        try
-        {
-            w = new FileWriter( touch );
-
-            w.write( "touch.txt" );
-        }
-        catch ( IOException e )
-        {
-            throw new MojoExecutionException( "Error creating file " + touch, e );
-        }
-        finally
-        {
-            if ( w != null )
-            {
-                try
-                {
-                    w.close();
-                }
-                catch ( IOException e )
-                {
-                    // ignore
-                }
-            }
+        try (FileWriter w = new FileWriter(touch)) {
+            w.write("touch.txt");
+            getLog().info("Created file " + touch);
+        } catch (IOException e) {
+            throw new MojoExecutionException("Error creating file " + touch, e);
         }
     }
 }

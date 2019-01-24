@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>maven.course</groupId>
-  <artifactId>maven-uppercase-plugin</artifactId>
+  <artifactId>custom-uppercase-plugin</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>maven-plugin</packaging>
-  <name>maven-uppercase-plugin-example</name>
-  <description>Example of a Maven plugin</description>
+  <name>custom-uppercase-plugin-example</name>
+  <description>Example of a custom Maven plugin</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.version>3.0.5</maven.version>
+    <java.version>1.8</java.version>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
   </properties>
+
   <prerequisites>
-  	<maven>${maven.version}</maven>
+    <maven>${maven.version}</maven>
   </prerequisites>
 
   <dependencies>
@@ -23,16 +27,10 @@
       <artifactId>maven-plugin-api</artifactId>
       <version>${maven.version}</version>
     </dependency>
-	<dependency>
-		<groupId>org.apache.maven</groupId>
-		<artifactId>maven-project</artifactId>
-		<version>2.2.1</version>
-	</dependency>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.2</version>
-      <scope>test</scope>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-project</artifactId>
+      <version>2.2.1</version>
     </dependency>
   </dependencies>
 
@@ -43,7 +41,7 @@
         <artifactId>maven-plugin-plugin</artifactId>
         <version>2.9</version>
         <configuration>
-          <goalPrefix>maven-uppercase-plugin</goalPrefix>
+          <goalPrefix>custom-uppercase-plugin</goalPrefix>
         </configuration>
         <executions>
           <execution>

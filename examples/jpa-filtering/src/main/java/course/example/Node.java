@@ -1,6 +1,5 @@
 package course.example;
 
-
 import javax.persistence.*;
 import java.util.LinkedList;
 import java.util.List;
@@ -11,8 +10,7 @@ import java.util.List;
 @Entity
 @Table(name = "tree")
 @NamedQueries({
-        @NamedQuery(name="findAllRootNodesWithTheirChildren", query="Select n from Node as n where n.parent IS NULL"),
-})
+        @NamedQuery(name = "findAllRootNodesWithTheirChildren", query = "Select n from Node as n where n.parent IS NULL"), })
 public class Node {
 
     @Id
@@ -24,10 +22,10 @@ public class Node {
     private String type;
 
     @ManyToOne
-    @JoinColumn(name="parent")
+    @JoinColumn(name = "parent")
     private Node parent;
 
-    @OneToMany (mappedBy = "parent", cascade= CascadeType.ALL, fetch=FetchType.EAGER, orphanRemoval = true)
+    @OneToMany(mappedBy = "parent", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
     @OrderColumn
     private List<Node> children;
 
@@ -37,12 +35,12 @@ public class Node {
         this.name = "";
     }
 
-    public Node(String name){
+    public Node(String name) {
         this();
         this.name = name;
     }
 
-    public Node(String name, String type){
+    public Node(String name, String type) {
         this(name);
         this.type = type;
     }
@@ -77,7 +75,7 @@ public class Node {
     }
 
     public void addChild(Node... childNodes) {
-        for (Node child:childNodes) {
+        for (Node child : childNodes) {
             this.addChild(child);
         }
     }
@@ -95,7 +93,7 @@ public class Node {
         if (parent != null) {
             path = parent.getPath();
         }
-        path =  path + "/" + name;
+        path = path + "/" + name;
         return path;
     }
 
@@ -107,17 +105,12 @@ public class Node {
         return this.parent;
     }
 
-    public boolean isParent() {
-        return this.parent==null?true:false;
+    public boolean hasParent() {
+        return this.parent == null;
     }
 
     @Override
     public String toString() {
-        return "Node{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", type='" + type + '\'' +
-                ", path=" + getPath() +
-                '}';
+        return "Node{" + "id=" + id + ", name='" + name + '\'' + ", type='" + type + '\'' + ", path=" + getPath() + '}';
     }
 }

@@ -20,6 +20,9 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.7</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
 	</properties>
 
 	<dependencies>
@@ -64,19 +67,9 @@
 					<resourceDestDir>${project.build.directory}/resources-generated</resourceDestDir>
 					<sourceDestDir>${project.build.directory}/sources-generated</sourceDestDir>
 					<wsdlLocation>http://localhost:9000/services?wsdl</wsdlLocation>
-                                        <vmArgs>
-                                            <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
-                                        </vmArgs>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.0</version>
-				<configuration>
-					<encoding>UTF-8</encoding>
-					<source>1.7</source>
-					<target>1.7</target>
+					<vmArgs>
+						<vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+					</vmArgs>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -125,7 +118,7 @@
 				<!-- https://www.soapui.org/test-automation/maven/maven-2-x.html -->
 				<groupId>com.smartbear.soapui</groupId>
 				<artifactId>soapui-maven-plugin</artifactId>
-				<version>5.1.1</version>
+				<version>5.4.0</version>
 				<configuration>
 					<outputFolder>${project.build.directory}/soapui</outputFolder>
 					<junitReport>true</junitReport>

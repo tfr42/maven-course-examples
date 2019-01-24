@@ -1,94 +1,179 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="28ae29a9-8586-43cf-a84d-169e431f9d23" activeEnvironment="Default" name="HelloService" resourceRoot="" soapui-version="5.2.1" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="436c74b0-4980-4774-9f32-6c1e845ba474" wsaVersion="NONE" name="HelloServiceSoapBinding" type="wsdl" bindingName="{http://course/hello}HelloServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/helloworld/HelloService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/helloworld/HelloService?wsdl"><con:part><con:url>http://localhost:8080/helloworld/HelloService?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="HelloService" targetNamespace="http://course/hello" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://course/hello" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
-  <wsdl:types>
-    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://course/hello" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-      <xs:element name="sayOperation" type="tns:sayOperation"/>
-      <xs:element name="sayOperationResponse" type="tns:sayOperationResponse"/>
-      <xs:complexType name="sayOperation">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="name" type="tns:NameType"/>
-        </xs:sequence>
-      </xs:complexType>
-      <xs:complexType name="NameType">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="firsName" type="xs:string"/>
-          <xs:element minOccurs="0" name="lastName" type="xs:string"/>
-        </xs:sequence>
-      </xs:complexType>
-      <xs:complexType name="sayOperationResponse">
-        <xs:sequence>
-          <xs:element form="qualified" minOccurs="0" name="greeting" type="xs:string"/>
-        </xs:sequence>
-      </xs:complexType>
-      <xs:complexType name="FaultType">
-        <xs:sequence/>
-        <xs:attribute name="msg" type="xs:string"/>
-      </xs:complexType>
-      <xs:element name="EmptyName" nillable="true" type="tns:FaultType"/>
-    </xs:schema>
-  </wsdl:types>
-  <wsdl:message name="EmptyNameException">
-    <wsdl:part element="tns:EmptyName" name="EmptyNameException"></wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="sayOperation">
-    <wsdl:part element="tns:sayOperation" name="parameters"></wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="sayOperationResponse">
-    <wsdl:part element="tns:sayOperationResponse" name="parameters"></wsdl:part>
-  </wsdl:message>
-  <wsdl:portType name="Hello">
-    <wsdl:operation name="sayOperation">
-      <wsdl:input message="tns:sayOperation" name="sayOperation"></wsdl:input>
-      <wsdl:output message="tns:sayOperationResponse" name="sayOperationResponse"></wsdl:output>
-      <wsdl:fault message="tns:EmptyNameException" name="EmptyNameException"></wsdl:fault>
-    </wsdl:operation>
-  </wsdl:portType>
-  <wsdl:binding name="HelloServiceSoapBinding" type="tns:Hello">
-    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-    <wsdl:operation name="sayOperation">
-      <soap:operation soapAction="sayHello" style="document"/>
-      <wsdl:input name="sayOperation">
-        <soap:body use="literal"/>
-      </wsdl:input>
-      <wsdl:output name="sayOperationResponse">
-        <soap:body use="literal"/>
-      </wsdl:output>
-      <wsdl:fault name="EmptyNameException">
-        <soap:fault name="EmptyNameException" use="literal"/>
-      </wsdl:fault>
-    </wsdl:operation>
-  </wsdl:binding>
-  <wsdl:service name="HelloService">
-    <wsdl:port binding="tns:HelloServiceSoapBinding" name="HelloPort">
-      <soap:address location="http://localhost:8080/helloworld/HelloService"/>
-    </wsdl:port>
-  </wsdl:service>
-</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/helloworld/HelloService</con:endpoint></con:endpoints><con:operation id="5079ff3b-cbd6-416b-96ef-06a624fc492f" isOneWay="false" action="sayHello" name="sayOperation" bindingOperationName="sayOperation" type="Request-Response" outputName="sayOperationResponse" inputName="sayOperation" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="333cac94-b651-4904-87d6-b9238546ddaa" name="sayHelloToHansDampf"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/helloworld/HelloService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:hel="http://course/hello">
-   <soapenv:Header/>
-   <soapenv:Body>
-      <hel:sayOperation>
-         <!--Optional:-->
-         <name>
-            <!--Optional:-->
-            <firstName>Hans</firstName>
-            <!--Optional:-->
-            <lastName>Dampf</lastName>
-         </name>
-      </hel:sayOperation>
-   </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="sayHello"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="ad9ff40b-dd6d-4bef-95d4-0fcfbea15d9f" name="HelloServiceTestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="ee0ec4f7-7196-44e5-ae23-fc67d759382f" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true"><con:settings/><con:testStep type="request" id="9ef99214-5ff7-4718-bb45-3b080a684daa" name="sayOperation - sayHelloToHansDampf"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HelloServiceSoapBinding</con:interface><con:operation>sayOperation</con:operation><con:request name="sayOperation - sayHelloToHansDampf" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="10f857e6-0acb-4ef6-8d13-8284cea6bf1c"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/helloworld/HelloService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:hel="http://course/hello">
-   <soapenv:Header/>
-   <soapenv:Body>
-      <hel:sayOperation>
-         <!--Optional:-->
-         <name>
-            <!--Optional:-->
-            <firstName>Hans</firstName>
-            <!--Optional:-->
-            <lastName>Dampf</lastName>
-         </name>
-      </hel:sayOperation>
-   </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="f2758f6b-6972-4fc6-88d2-7c7299c221bf" name="SOAP Response"/><con:assertion type="XPath Match" id="a0a194a0-4c10-4d17-83f4-42cc81338d30" name="XPath Match"><con:configuration><path>declare namespace soap='http://schemas.xmlsoap.org/soap/envelope/';
+<con:soapui-project id="28ae29a9-8586-43cf-a84d-169e431f9d23" activeEnvironment="Default" name="HelloService" resourceRoot="" soapui-version="5.2.1" 
+  xmlns:con="http://eviware.com/soapui/config">
+  <con:settings/>
+  <con:interface xsi:type="con:WsdlInterface" id="436c74b0-4980-4774-9f32-6c1e845ba474" wsaVersion="NONE" name="HelloServiceSoapBinding" type="wsdl" bindingName="{http://course/hello}HelloServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/helloworld/HelloService?wsdl" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT" rootPart="http://localhost:8080/helloworld/HelloService?wsdl">
+      <con:part>
+        <con:url>http://localhost:8080/helloworld/HelloService?wsdl</con:url>
+        <con:content><![CDATA[<wsdl:definitions name="HelloService" targetNamespace="http://course/hello" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://course/hello" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+<wsdl:types>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://course/hello" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="sayOperation" type="tns:sayOperation"/>
+<xs:element name="sayOperationResponse" type="tns:sayOperationResponse"/>
+<xs:complexType name="sayOperation">
+<xs:sequence>
+<xs:element minOccurs="0" name="name" type="tns:NameType"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="NameType">
+<xs:sequence>
+<xs:element minOccurs="0" name="firsName" type="xs:string"/>
+<xs:element minOccurs="0" name="lastName" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="sayOperationResponse">
+<xs:sequence>
+<xs:element form="qualified" minOccurs="0" name="greeting" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="FaultType">
+<xs:sequence/>
+<xs:attribute name="msg" type="xs:string"/>
+</xs:complexType>
+<xs:element name="EmptyName" nillable="true" type="tns:FaultType"/>
+</xs:schema>
+</wsdl:types>
+<wsdl:message name="EmptyNameException">
+<wsdl:part element="tns:EmptyName" name="EmptyNameException"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="sayOperation">
+<wsdl:part element="tns:sayOperation" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="sayOperationResponse">
+<wsdl:part element="tns:sayOperationResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:portType name="Hello">
+<wsdl:operation name="sayOperation">
+<wsdl:input message="tns:sayOperation" name="sayOperation"></wsdl:input>
+<wsdl:output message="tns:sayOperationResponse" name="sayOperationResponse"></wsdl:output>
+<wsdl:fault message="tns:EmptyNameException" name="EmptyNameException"></wsdl:fault>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="HelloServiceSoapBinding" type="tns:Hello">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="sayOperation">
+<soap:operation soapAction="sayHello" style="document"/>
+<wsdl:input name="sayOperation">
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output name="sayOperationResponse">
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="EmptyNameException">
+<soap:fault name="EmptyNameException" use="literal"/>
+</wsdl:fault>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="HelloService">
+<wsdl:port binding="tns:HelloServiceSoapBinding" name="HelloPort">
+<soap:address location="http://localhost:8080/helloworld/HelloService"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>]]></con:content>
+        <con:type>http://schemas.xmlsoap.org/wsdl/</con:type>
+      </con:part>
+    </con:definitionCache>
+    <con:endpoints>
+      <con:endpoint>http://localhost:8080/helloworld/HelloService</con:endpoint>
+    </con:endpoints>
+    <con:operation id="5079ff3b-cbd6-416b-96ef-06a624fc492f" isOneWay="false" action="sayHello" name="sayOperation" bindingOperationName="sayOperation" type="Request-Response" outputName="sayOperationResponse" inputName="sayOperation" receivesAttachments="false" sendsAttachments="false" anonymous="optional">
+      <con:settings/>
+      <con:call id="333cac94-b651-4904-87d6-b9238546ddaa" name="sayHelloToHansDampf">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>http://localhost:8080/helloworld/HelloService</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:hel="http://course/hello">
+<soapenv:Header/>
+<soapenv:Body>
+<hel:sayOperation>
+<!--Optional:-->
+<name>
+<!--Optional:-->
+<firstName>Hans</firstName>
+<!--Optional:-->
+<lastName>Dampf</lastName>
+</name>
+</hel:sayOperation>
+</soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="sayHello"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+    </con:operation>
+  </con:interface>
+  <con:testSuite id="ad9ff40b-dd6d-4bef-95d4-0fcfbea15d9f" name="HelloServiceTestSuite">
+    <con:settings/>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase id="ee0ec4f7-7196-44e5-ae23-fc67d759382f" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="request" id="9ef99214-5ff7-4718-bb45-3b080a684daa" name="sayOperation - sayHelloToHansDampf">
+        <con:settings/>
+        <con:config xsi:type="con:RequestStep" 
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:interface>HelloServiceSoapBinding</con:interface>
+          <con:operation>sayOperation</con:operation>
+          <con:request name="sayOperation - sayHelloToHansDampf" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="10f857e6-0acb-4ef6-8d13-8284cea6bf1c">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>http://localhost:8080/helloworld/HelloService</con:endpoint>
+            <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:hel="http://course/hello">
+<soapenv:Header/>
+<soapenv:Body>
+<hel:sayOperation>
+<!--Optional:-->
+<name>
+<!--Optional:-->
+<firstName>Hans</firstName>
+<!--Optional:-->
+<lastName>Dampf</lastName>
+</name>
+</hel:sayOperation>
+</soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+            <con:assertion type="SOAP Response" id="f2758f6b-6972-4fc6-88d2-7c7299c221bf" name="SOAP Response"/>
+            <con:assertion type="XPath Match" id="a0a194a0-4c10-4d17-83f4-42cc81338d30" name="XPath Match">
+              <con:configuration>
+                <path>declare namespace soap='http://schemas.xmlsoap.org/soap/envelope/';
 declare namespace ns2='http://course/hello';
-//ns2:greeting</path><content>Hello, Hans Dampf!</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="Valid HTTP Status Codes" id="dfab2227-94a9-4063-b474-08f52ff5e28a" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="sayHello"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>
+//ns2:greeting</path>
+                <content>Hello, Hans Dampf!</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Valid HTTP Status Codes" id="dfab2227-94a9-4063-b474-08f52ff5e28a" name="Valid HTTP Status Codes">
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:wsaConfig mustUnderstand="NONE" version="200508" action="sayHello"/>
+            <con:wsrmConfig version="1.2"/>
+          </con:request>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:properties/>
+  </con:testSuite>
+  <con:properties/>
+  <con:wssContainer/>
+  <con:oAuth2ProfileContainer/>
+</con:soapui-project>

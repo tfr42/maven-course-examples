@@ -20,7 +20,7 @@
             <phase>validate</phase>
             <configuration>
               <target>
-                <echo>2</echo>
+                <echo>Ant tasks for the validate phase</echo>
                 <echo>GAV: ${project.groupId}:${project.artifactId}:${project.version}</echo>
               </target>
             </configuration>
@@ -35,8 +35,8 @@
               <target>
                 <!-- Place any Ant task here. You can add anything you can 
                   add between <target> and </target> in a build.xml. -->
+                <echo>Ant tasks for the verify phase</echo>
                 <property name="runtime_classpath" refid="maven.runtime.classpath" />
-                <echo>1</echo>
                 <echo>${PATH}=${env.PATH}</echo>
                 <echo>User's Home Directory: ${user.home}</echo>
                 <echo>Project's Base Director: ${basedir}</echo>
