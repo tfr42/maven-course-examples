@@ -1,21 +1,19 @@
 package course.maven.weather.yahoo;
 
+import static org.junit.Assert.assertEquals;
+
 import java.io.InputStream;
 
-import junit.framework.TestCase;
-
 import org.apache.commons.io.IOUtils;
+import org.junit.Test;
 
 import com.sonatype.maven.weather.yahoo.Weather;
 import com.sonatype.maven.weather.yahoo.WeatherFormatter;
 import com.sonatype.maven.weather.yahoo.YahooParser;
 
-public class WeatherFormatterTest extends TestCase {
+public class WeatherFormatterTest {
 
-	public WeatherFormatterTest(String name) {
-		super(name);
-	}
-
+	@Test
 	public void testFormat() throws Exception {
 		InputStream nyData = getClass().getClassLoader().getResourceAsStream("ny-weather.xml");
 		Weather weather = new YahooParser().parse(nyData);

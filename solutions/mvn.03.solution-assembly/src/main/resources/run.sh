@@ -1,2 +1,2 @@
 #! /bin/bash
-java -cp ../conf:../lib/* ${main.class}
+java -cp ../conf:../lib/* ${main.class} "$@"
