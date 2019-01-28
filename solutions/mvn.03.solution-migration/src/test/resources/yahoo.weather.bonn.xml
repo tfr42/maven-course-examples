@@ -1,0 +1,19 @@
+<rss xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" xmlns:yweather="http://xml.weather.yahoo.com/ns/rss/1.0" version="2.0"><channel><yweather:units distance="km" pressure="mbar" speed="km/h" temperature="C"/><title>Yahoo! Weather - Bonn, NW, DE</title><link>http://us.rd.yahoo.com/dailynews/rss/weather/Country__Country/*https://weather.yahoo.com/country/state/city-640161/</link><description>Yahoo! Weather for Bonn, NW, DE</description><language>en-us</language><lastBuildDate>Mon, 28 Jan 2019 12:12 PM CET</lastBuildDate><ttl>60</ttl><yweather:location city="Bonn" country="Germany" region=" NW"/><yweather:wind chill="-2" direction="280" speed="26"/><yweather:atmosphere humidity="87" pressure="979.0" rising="0" visibility="16.1"/><yweather:astronomy sunrise="8:12 am" sunset="5:18 pm"/><image><title>Yahoo! Weather</title><width>142</width><height>18</height><link>http://weather.yahoo.com</link><url>http://l.yimg.com/a/i/brand/purplelogo//uh/us/news-wea.gif</url></image><item><title>Conditions for Bonn, NW, DE at 11:00 AM CET</title><geo:lat>50.7323</geo:lat><geo:long>7.10169</geo:long><link>http://us.rd.yahoo.com/dailynews/rss/weather/Country__Country/*https://weather.yahoo.com/country/state/city-640161/</link><pubDate>Mon, 28 Jan 2019 11:00 AM CET</pubDate><yweather:condition code="11" date="Mon, 28 Jan 2019 11:00 AM CET" temp="2" text="Showers"/><yweather:forecast code="5" date="28 Jan 2019" day="Mon" high="3" low="1" text="Rain And Snow"/><yweather:forecast code="28" date="29 Jan 2019" day="Tue" high="2" low="0" text="Mostly Cloudy"/><yweather:forecast code="26" date="30 Jan 2019" day="Wed" high="2" low="0" text="Cloudy"/><yweather:forecast code="28" date="31 Jan 2019" day="Thu" high="3" low="0" text="Mostly Cloudy"/><yweather:forecast code="28" date="01 Feb 2019" day="Fri" high="3" low="0" text="Mostly Cloudy"/><yweather:forecast code="26" date="02 Feb 2019" day="Sat" high="3" low="0" text="Cloudy"/><yweather:forecast code="28" date="03 Feb 2019" day="Sun" high="3" low="0" text="Mostly Cloudy"/><yweather:forecast code="28" date="04 Feb 2019" day="Mon" high="3" low="0" text="Mostly Cloudy"/><yweather:forecast code="28" date="05 Feb 2019" day="Tue" high="3" low="-1" text="Mostly Cloudy"/><yweather:forecast code="28" date="06 Feb 2019" day="Wed" high="2" low="0" text="Mostly Cloudy"/><description>&lt;![CDATA[&lt;img src="http://l.yimg.com/a/i/us/we/52/11.gif"/&gt;
+&lt;BR /&gt;
+&lt;b&gt;Current Conditions:&lt;/b&gt;
+&lt;BR /&gt;Showers
+&lt;BR /&gt;
+&lt;BR /&gt;
+&lt;b&gt;Forecast:&lt;/b&gt;
+&lt;BR /&gt; Mon - Rain And Snow. High: 3 Low: 1
+&lt;BR /&gt; Tue - Mostly Cloudy. High: 2 Low: 0
+&lt;BR /&gt; Wed - Cloudy. High: 2 Low: 0
+&lt;BR /&gt; Thu - Mostly Cloudy. High: 3 Low: 0
+&lt;BR /&gt; Fri - Mostly Cloudy. High: 3 Low: 0
+&lt;BR /&gt;
+&lt;BR /&gt;
+&lt;a href="http://us.rd.yahoo.com/dailynews/rss/weather/Country__Country/*https://weather.yahoo.com/country/state/city-640161/"&gt;Full Forecast at Yahoo! Weather&lt;/a&gt;
+&lt;BR /&gt;
+&lt;BR /&gt;
+&lt;BR /&gt;
+]]&gt;</description><guid isPermaLink="false"/></item></channel></rss>

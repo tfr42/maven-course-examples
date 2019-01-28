@@ -22,10 +22,10 @@ public class YahooParser {
 
 		log.trace( "Parsing XML Response: " + doc.asXML());
 		weather.setCity( doc.valueOf("//yweather:location/@city"));
-		weather.setRegion( doc.valueOf("//yweather:location/@region") );
+		weather.setRegion( doc.valueOf("//yweather:location/@region").trim() );
 		weather.setCountry( doc.valueOf("//yweather:location/@country") );
 		weather.setCondition( doc.valueOf("//yweather:condition/@text") );
-		weather.setTemp( doc.valueOf("//yweather:condition/@temp") );
+		weather.setTemp( doc.valueOf("//yweather:condition/@temp").trim() );
 		weather.setChill( doc.valueOf("//yweather:wind/@chill") );
 		weather.setHumidity( doc.valueOf("//yweather:atmosphere/@humidity") );
 
@@ -33,7 +33,7 @@ public class YahooParser {
 	}
 
 	private SAXReader createXmlReader() {
-		Map<String,String> uris = new HashMap<String,String>();
+		Map<String,String> uris = new HashMap<>();
         uris.put( "yahoo", "http://www.yahooapis.com/v1/base.rng" );
 		uris.put( "yweather", "http://xml.weather.yahoo.com/ns/rss/1.0" );
 
