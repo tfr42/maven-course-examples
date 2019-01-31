@@ -1,27 +1,30 @@
-package com.mycompany.weather;
+package course.maven;
 
-import junit.framework.TestCase;
+import static org.junit.Assert.assertTrue;
 
 import org.apache.log4j.Logger;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class WeatherIntegrationTest extends TestCase {
+public class WeatherIntegrationTest  {
 	private static Logger LOG = Logger.getLogger(WeatherIntegrationTest.class);
 
 	private WebDriver driver = new HtmlUnitDriver();
 
-	protected void setUp() {
+	@Before
+	public void setUp() {
 		driver.get("http://localhost:8088/");
 	}
 
+	@Test
 	public void testGetWeatherForZip02101() {
         // Find the text input element by its name
-        WebElement element = driver.findElement(By.name("zip"));
+        WebElement element = driver.findElement(By.name("location"));
 
         element.clear();
         // Enter something to search for
@@ -32,18 +35,13 @@ public class WeatherIntegrationTest extends TestCase {
 
         LOG.info("Form submitted to: " + driver.getCurrentUrl());
         
-        // Wait for the page to load, timeout after 10 seconds
-        (new WebDriverWait(driver, 10)).until(new ExpectedCondition<String>() {
-            public String apply(WebDriver d) {
-                return d.getPageSource();
-            }
-        });
         String actualPage = driver.getPageSource();
         LOG.info("Page content is: " + actualPage );
         assertTrue(actualPage.contains("Boston"));
 	}
 
-	protected void tearDown() {
+	@After
+	public void tearDown() {
 		// Close the browser
 		driver.quit();
 	}

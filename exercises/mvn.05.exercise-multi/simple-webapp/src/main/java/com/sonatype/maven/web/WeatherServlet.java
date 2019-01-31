@@ -1,21 +1,29 @@
 package com.sonatype.maven.web;
 
-import com.sonatype.maven.weather.WeatherService;
-import java.io.*;
-import javax.servlet.*;
-import javax.servlet.http.*;
+import java.io.IOException;
+import java.io.PrintWriter;
 
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.sonatype.maven.weather.yahoo.WeatherService;
+
+@WebServlet("/weather")
 public class WeatherServlet extends HttpServlet {
+	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String zip = request.getParameter("zip");
+		String location = request.getParameter("location");
+		
 		WeatherService weatherService = new WeatherService();
-		PrintWriter out = response.getWriter();
-		try {
-			out.println(weatherService.retrieveForecast(zip));
-		} catch (Exception e) {
-			out.println("Error Retrieving Forecast: " + e.getMessage());
+		try (PrintWriter out = response.getWriter()) {
+			try {
+				out.println(weatherService.retrieveForecast(location));
+			} catch (Exception e) {
+				out.println("Error Retrieving Forecast: " + e.getMessage());
+			}
 		}
-		out.flush();
-		out.close();
 	}
 }

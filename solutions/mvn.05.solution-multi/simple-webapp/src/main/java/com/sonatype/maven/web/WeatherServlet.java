@@ -1,24 +1,29 @@
 package com.sonatype.maven.web;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import com.sonatype.maven.weather.yahoo.WeatherService;
-import java.io.*;
-import javax.servlet.*;
-import javax.servlet.http.*;
 
+@WebServlet("/weather")
 public class WeatherServlet extends HttpServlet {
-	private static final long serialVersionUID = 7043513519069899179L;
-
-	public void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		String zip = request.getParameter("zip");
+	@Override
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String location = request.getParameter("location");
+		
 		WeatherService weatherService = new WeatherService();
-		PrintWriter out = response.getWriter();
-		try {
-			out.println(weatherService.retrieveForecast(zip));
-		} catch (Exception e) {
-			out.println("Error Retrieving Forecast: " + e.getMessage());
+		try (PrintWriter out = response.getWriter()) {
+			try {
+				out.println(weatherService.retrieveForecast(location));
+			} catch (Exception e) {
+				out.println("Error Retrieving Forecast: " + e.getMessage());
+			}
 		}
-		out.flush();
-		out.close();
 	}
 }

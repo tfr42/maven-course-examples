@@ -3,52 +3,35 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>maven.course.solutions</groupId>
-		<artifactId>simple-weather-parent</artifactId>
+		<artifactId>mvn.05.solution-simple-weather-parent</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
-	<artifactId>simple-webapp</artifactId>
+	<artifactId>mvn.05.solution-simple-webapp</artifactId>
 	<packaging>war</packaging>
 	<name>Simple Weather Web Application with Integration Tests</name>
 	<url>http://localhost:8088/</url>
 	<dependencies>
 		<dependency>
 			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-			<version>2.5</version>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>4.0.1</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
-			<artifactId>simple-weather</artifactId>
+			<artifactId>mvn.05.solution-simple-weather</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>commons-lang</groupId>
-			<artifactId>commons-lang</artifactId>
-			<version>2.6</version>
-		</dependency>
-		<dependency>
-			<groupId>javax.el</groupId>
-			<artifactId>el-api</artifactId>
-			<version>2.2</version>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>xml-apis</groupId>
-			<artifactId>xml-apis</artifactId>
-			<version>1.4.01</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-java</artifactId>
-			<version>2.9.0</version>
+			<artifactId>htmlunit-driver</artifactId>
+			<version>2.33.3</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.easymock</groupId>
-			<artifactId>easymock</artifactId>
-			<version>3.4</version>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>2.23.4</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
