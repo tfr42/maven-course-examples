@@ -1,23 +1,16 @@
 package com.devzuz.mvnbook.proficio;
 
-import junit.framework.TestCase;
+import org.junit.Test;
 
 /**
  * Unit test for simple App.
  */
-public class AppTest
-    extends TestCase
-{
-    private DefaultProficio proficio;
+public class AppTest {
 
-    public void setUp()
-    {
-        proficio = new DefaultProficio();
-    }
-
-    public void testApp()
-    {
-        proficio.testMethod1();
-        proficio.testMethod2();
-    }
+	@Test
+	public void testApp() {
+		final DefaultProficio proficio = new DefaultProficio();
+		proficio.testMethod1();
+		proficio.testMethod2();
+	}
 }
