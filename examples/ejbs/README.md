@@ -4,9 +4,9 @@
 
 ## Run the project on JBoss AS
 
-To deploy and run the application on JBoss AS 7.x run in the `application` submodule:
+To deploy and run the application on Wildfly (15) run in the `application` directory:
 
     cd application
-    mvn jboss-as:run
+    mvn wildfly:run
 
-(!) not working. NPE!
+Open <http://localhost:8080/webclient/>
