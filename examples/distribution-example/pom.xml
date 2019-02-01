@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>maven.course</groupId>
 	<artifactId>distribution-example</artifactId>
@@ -8,15 +9,19 @@
 	<description>Example using local nexus repository for deployment</description>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>3.8.2</version>
+			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
-	</dependencies>      
+	</dependencies>
 	<scm>
 		<connection>
 			scm:file://tmp
@@ -38,10 +43,7 @@
 		</snapshotRepository>
 	</distributionManagement>
 	<build>
-		<!--
-			Simply run:
-			mvn -s src/main/resources/config/settings.xml deploy
-		-->
+		<!-- Simply run: mvn -s src/main/resources/config/settings.xml deploy -->
 		<defaultGoal>deploy</defaultGoal>
 	</build>
 </project>
