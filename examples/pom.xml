@@ -35,6 +35,7 @@
     <module>reports</module>
     <module>simple-release</module>
     <module>spring-bom</module>
+    <module>polyglot</module>
   </modules>
   <profiles>
    	<profile>
