@@ -9,5 +9,5 @@ mvn install
 Call custom plugin:
 
 ```
-mvn maven.course:maven-touch-plugin:touch
+mvn maven.course:touch-maven-plugin:touch
 ```

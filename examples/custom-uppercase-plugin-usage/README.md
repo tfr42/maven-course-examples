@@ -1,6 +1,6 @@
 # Usage example of custom maven plugin
 
-Plugin `custom-uppercase-plugin`'s goal `uppercase` is configured to be called during the `process-resources` phase (see (maven-uppercase-plugin)[../maven-uppercase-plugin/README.md] for installation).
+Plugin `custom-uppercase-plugin`'s goal `uppercase` is configured to be called during the `process-resources` phase (see (custom-uppercase-plugin)[../custom-uppercase-plugin/README.md] for installation).
 
 ```
 mvn process-resources

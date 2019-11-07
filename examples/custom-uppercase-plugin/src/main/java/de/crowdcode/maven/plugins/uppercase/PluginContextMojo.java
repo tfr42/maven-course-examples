@@ -5,22 +5,20 @@ import java.util.Map;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
+import org.apache.maven.plugins.annotations.Mojo;
+import org.apache.maven.plugins.annotations.Parameter;
 import org.apache.maven.project.MavenProject;
 
 /**
- * @goal print-context
- * 
  * @author idueppe
- *
  */
+@Mojo(name = "print-context")
 public class PluginContextMojo extends AbstractMojo {
 
-	/**
-	 * @parameter expression="${project}"
-	 * @readonly
-	 */
-	protected MavenProject project;
+	@Parameter(readonly = true, property = "project")
+	private MavenProject project;
 
+	@SuppressWarnings("unchecked")
 	public void execute() throws MojoExecutionException, MojoFailureException {
 		getLog().info("Name " + project.getArtifactId());
 		getLog().info("---------------------------------");

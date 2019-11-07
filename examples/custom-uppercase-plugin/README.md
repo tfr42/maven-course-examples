@@ -13,4 +13,4 @@ Usage:
 mvn maven.course:custom-uppercase-plugin:help
 ```
 
-See (maven-uppercase-plugin-usage)[../maven-uppercase-plugin-usage/README.md] for usage.
+See (custom-uppercase-plugin-usage)[../custom-uppercase-plugin-usage/README.md] for usage.

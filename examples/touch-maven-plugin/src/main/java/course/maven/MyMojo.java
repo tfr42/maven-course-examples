@@ -18,6 +18,9 @@ package course.maven;
 
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
+import org.apache.maven.plugins.annotations.LifecyclePhase;
+import org.apache.maven.plugins.annotations.Mojo;
+import org.apache.maven.plugins.annotations.Parameter;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -26,32 +29,27 @@ import java.io.IOException;
 /**
  * Goal which touches a timestamp file.
  *
- * @goal touch
- * 
- * @phase process-sources
  */
+@Mojo(name = "touch", defaultPhase = LifecyclePhase.PROCESS_RESOURCES)
 public class MyMojo extends AbstractMojo {
     /**
-     * Location of the file.
-     * 
-     * @parameter expression="${project.build.directory}"
-     * @required
+     * Directory of the file.
      */
+	@Parameter(required = true, defaultValue = "${project.build.directory}")
     private File outputDirectory;
 
     public void execute() throws MojoExecutionException {
-        File f = outputDirectory;
 
-        if (!f.exists()) {
-            f.mkdirs();
+        if (!outputDirectory.exists()) {
+        	outputDirectory.mkdirs();
         }
 
-        File touch = new File(f, "touch.txt");
+        final File touch = new File(outputDirectory, "touch.txt");
 
-        try (FileWriter w = new FileWriter(touch)) {
+        try (final FileWriter w = new FileWriter(touch)) {
             w.write("touch.txt");
             getLog().info("Created file " + touch);
-        } catch (IOException e) {
+        } catch (final IOException e) {
             throw new MojoExecutionException("Error creating file " + touch, e);
         }
     }

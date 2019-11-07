@@ -18,40 +18,37 @@ package de.crowdcode.maven.plugins.uppercase;
 
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
+import org.apache.maven.plugins.annotations.LifecyclePhase;
+import org.apache.maven.plugins.annotations.Mojo;
+import org.apache.maven.plugins.annotations.Parameter;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
 /**
- * Goal which touches a timestamp file.
+ * Goal which creates a copy of files, renaming them with upper case.
  * 
- * @goal uppercase
- * 
- * @phase process-resources
  */
+@Mojo(name="uppercase", defaultPhase = LifecyclePhase.PROCESS_RESOURCES)
 public class UpperCaseMojo extends AbstractMojo {
 	/**
-	 * Location of the file.
-	 * 
-	 * @parameter default-value="${project.build.directory}/upperCases"
-	 * @required
+	 * Directory where the files should be written
 	 */
+	@Parameter(defaultValue = "${project.build.directory}/upperCases", required = true)
 	private File outputDirectory;
 
-	/**
-	 * @parameter expression="${message}" default-value="Hello World!"
-	 */
+	@Parameter(property = "message", defaultValue = "Hello World!")
 	private String message;
 
 	/**
-	 * Directory containing resources files.
-	 *
-	 * @parameter default-value="${basedir}/src/main/resources"
+	 * Directory containing the source files.
 	 */
+	@Parameter(defaultValue = "${basedir}/src/main/resources")
 	private File sourceDirectory;
 
 	public void execute() throws MojoExecutionException {
+		
 		if (!sourceDirectory.exists()) {
 			throw new MojoExecutionException("Error no sourceDirectory defined!");
 		}
