@@ -23,7 +23,7 @@
 			<!--This sends everything else to /public -->
 			<id>nexus</id>
 			<mirrorOf>*</mirrorOf>
-			<url>http://${NEXUS_SERVER}/nexus/content/groups/public</url>
+			<url>http://${NEXUS_SERVER}/repository/maven-public</url>
 		</mirror>
 	</mirrors>
 	<profiles>

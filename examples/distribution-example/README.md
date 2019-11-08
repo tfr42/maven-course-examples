@@ -17,13 +17,13 @@ To use the provided Maven `settings.xml` with the Nexus default accounts run Mav
 
 Using the official image from https://hub.docker.com/r/sonatype/nexus3/:
 
-    $ docker pull sonatype/nexus3
+    $ docker pull sonatype/nexus3:3.16.1
 
 ### Start docker container with Nexus Repository Manager
 
 To run, binding the exposed port 8081 to the host.
      
-     $ docker run -d -p 8081:8081 --name nexus sonatype/nexus3   
+     $ docker run -d -p 8081:8081 --name nexus sonatype/nexus3:3.16.1   
 
 ### Access Nexus Repository Manager
 

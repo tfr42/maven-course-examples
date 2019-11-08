@@ -32,11 +32,11 @@
 		<repository>
 			<id>nexus-releases</id>
 			<name>Nexus-Repository</name>
-			<url>http://${NEXUS_SERVER}/nexus/content/repositories/releases</url>
+			<url>http://${NEXUS_SERVER}/repository/maven-releases</url>
 		</repository>
 		<snapshotRepository>
 			<id>nexus-snapshots</id>
-			<url>http://${NEXUS_SERVER}/nexus/content/repositories/snapshots</url>
+			<url>http://${NEXUS_SERVER}/repository/maven-snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>
 	<build>
