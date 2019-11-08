@@ -9,7 +9,7 @@
   <fileSets>
     <fileSet>
       <directory>${project.build.directory}/classes</directory>
-      <outputDirectory>/bin</outputDirectory>
+      <outputDirectory>bin</outputDirectory>
       <filtered>true</filtered>
 	  <includes>
         <include>*.cmd</include>
@@ -19,7 +19,7 @@
     </fileSet>
     <fileSet>
       <directory>${basedir}/src/main/config/profile/dev</directory>
-      <outputDirectory>/conf</outputDirectory>
+      <outputDirectory>conf</outputDirectory>
       <filtered>true</filtered>
       <includes>
         <include>log4j.*</include>
@@ -27,7 +27,7 @@
     </fileSet>
     <fileSet>
       <directory>${project.build.directory}/classes</directory>
-      <outputDirectory>/log</outputDirectory>
+      <outputDirectory>log</outputDirectory>
       <filtered>true</filtered>
       <includes>
         <include>placeholder.txt</include>
@@ -36,7 +36,7 @@
   </fileSets>
   <dependencySets>
   	<dependencySet>
-  		<outputDirectory>/lib</outputDirectory>
+  		<outputDirectory>lib</outputDirectory>
   	</dependencySet>
   </dependencySets>
 </assembly>
