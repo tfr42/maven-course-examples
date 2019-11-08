@@ -88,9 +88,6 @@
 					</archive>
 					<descriptorRefs>
 						<descriptorRef>jar-with-dependencies</descriptorRef>
-						<descriptorRef>project</descriptorRef>
-						<descriptorRef>src</descriptorRef>
-						<descriptorRef>bin</descriptorRef>
 					</descriptorRefs>
 				</configuration>
 			</plugin>
