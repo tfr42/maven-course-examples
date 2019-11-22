@@ -35,7 +35,9 @@
     <module>simple-release</module>
     <module>spring-bom</module>
     <module>touch-maven-plugin</module>
+    <!-- pom that is not is xml breaks the build (with Maven 3.6.2) => call mvn directly in module
     <module>polyglot</module>
+     -->
   </modules>
   <profiles>
    	<profile>
