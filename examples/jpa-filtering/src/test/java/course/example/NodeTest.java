@@ -26,7 +26,7 @@ import static org.junit.Assert.assertTrue;
  * Created by tf on 20.02.16.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath:jpaContext.xml"})
+@ContextConfiguration(locations = { "classpath:jpaContext.xml" })
 @Transactional
 @Commit
 public class NodeTest {
@@ -39,23 +39,23 @@ public class NodeTest {
 
     @Before
     public void setUp() {
-        //   A
-        //  /|\
+        // A
+        // /|\
         // B C D
-        //      \
-        //       E
+        // \
+        // E
         Node a = new Node("A");
         Node b = new Node("B");
         Node c = new Node("C");
         Node d = new Node("D");
         Node e = new Node("E");
-        a.addChild(b,c,d);
+        a.addChild(b, c, d);
         d.addChild(e);
         this.a = a;
         this.e = e;
         em = emf.createEntityManager();
     }
-    
+
     @BeforeTransaction
     public void beforeTx() {
 
@@ -63,21 +63,22 @@ public class NodeTest {
 
     @After
     public void tearDown() {
-        if (em != null) em.close();
+        if (em != null)
+            em.close();
     }
-    
+
     @AfterTransaction
     public void afterTx() {
 
     }
 
-    @Test @Transactional
+    @Test
+    @Transactional
     public void verifyThatTreeIsLoaded() {
         em.getTransaction().begin();
         em.persist(a);
         em.flush();
-        List resultList = em.createNamedQuery
-                ("findAllRootNodesWithTheirChildren").getResultList();
+        List resultList = em.createNamedQuery("findAllRootNodesWithTheirChildren").getResultList();
         System.out.println(resultList);
         assertNotNull(em.find(Node.class, a.getId()));
         em.getTransaction().commit();
@@ -86,25 +87,25 @@ public class NodeTest {
     @Test
     public void verifyTreeStructure() {
         em.persist(a);
-        System.out.println("path of e="+ e.getPath());
+        System.out.println("path of e=" + e.getPath());
         assertTrue(em.contains(e));
     }
 
     @Test
     public void verifyForRootNode() {
-        assertTrue(a.isParent());
-        assertFalse(e.isParent());
+        assertTrue(a.hasParent());
+        assertFalse(e.hasParent());
     }
 
     @Test(timeout = 1000)
     public void verifyBulkLoad() {
         em.getTransaction().begin();
         Node root = new Node("A");
-        for(int i = 0; i<10; i++) {
-            Node level1Node = new Node("B"+i);
+        for (int i = 0; i < 10; i++) {
+            Node level1Node = new Node("B" + i);
             level1Node.setParent(root);
-            for (int j=0; j<5; j++) {
-                Node level2Node = new Node("C"+i+j);
+            for (int j = 0; j < 5; j++) {
+                Node level2Node = new Node("C" + i + j);
                 level2Node.setParent(root);
             }
             em.persist(root);

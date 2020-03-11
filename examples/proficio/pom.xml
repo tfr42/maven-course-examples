@@ -42,7 +42,7 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>3.8.2</version>
+			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>     
 	</dependencies>
@@ -161,14 +161,16 @@
             <artifactId>maven-pmd-plugin</artifactId>
             <version>3.4</version>
             <configuration>
+            	<aggregate>true</aggregate>
                 <targetJdk>${java.version}</targetJdk>
-                <format>xml</format>
+                <format>html</format>
                 <linkXref>true</linkXref>
                 <sourceEncoding>ISO-8859-1</sourceEncoding>
                 <minimumTokens>100</minimumTokens>
                 <excludes>
                     <exclude>**/generated/*.java</exclude>
                 </excludes>
+                <skipEmptyReport>false</skipEmptyReport>
             </configuration>
         </plugin>
         <plugin>

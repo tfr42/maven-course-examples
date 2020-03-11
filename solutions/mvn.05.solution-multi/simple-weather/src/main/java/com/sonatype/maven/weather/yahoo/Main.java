@@ -9,26 +9,26 @@ public class Main {
 
 	public static void main(String[] args) throws Exception {
 		// Configure Log4J
-		PropertyConfigurator.configure(Main.class.getClassLoader().getResource("log4j.properties"));
+		PropertyConfigurator.configure(Main.class.getClassLoader().getResource(	"log4j.properties"));
 
-		// Read the Zip Code from the Command-line (if none supplied, use 11201 for New York City)
-		String zipcode = "11201";
+		// Read the searched location from the Command-line (if none supplied, use 11201 for New York City)
+		String location = "11201";
 		if (args != null && args.length > 0) {
-			zipcode = args[0];
+			location = args[0];
 		}
-		log.info("Using zip code: " + zipcode);
+		log.info("Using location: " + location);
 		// Start the program
-		new Main(zipcode).start();
+		new Main(location).start();
 	}
 
-	private String zip;
+	private String location;
 
-	public Main(String zip) {
-		this.zip = zip;
+	public Main(String location) {
+		this.location = location;
 	}
 
 	public void start() throws Exception {
-		System.out.print( new WeatherService().retrieveForecast( zip ) );
+		System.out.print( new WeatherService().retrieveForecast( location ) );
 	}
 
 }

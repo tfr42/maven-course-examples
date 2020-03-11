@@ -2,12 +2,12 @@
 <body>
 	<h2>Simple weather app</h2>
 
-	Enter the ZIP code to get the current weather conditions:
+	Enter the location / ZIP code to get the current weather conditions:
 	<form action="weather" method="get">
 		<table border="0" cellpadding="5" cellspacing="0" bgcolor="#E0E0E0">
 			<tr>
-				<td align="right">ZIP code:</td>
-				<td><input name="zip" type="text" size="5" maxlength=5
+				<td align="right">Location/ZIP code:</td>
+				<td><input name="location" type="text" size="20"
 					value="11201">
 				</td>
 			</tr>
